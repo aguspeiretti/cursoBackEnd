@@ -5,7 +5,7 @@ form.addEventListener("submit", async (event) => {
   const data = new FormData(form);
   const obj = {};
   data.forEach((value, key) => (obj[key] = value));
-  const response = await fetch("/api/sessions/login", {
+  const response = await fetch("/api/sessions/jwtLogin", {
     method: "POST",
     body: JSON.stringify(obj),
     headers: {
@@ -14,6 +14,7 @@ form.addEventListener("submit", async (event) => {
   });
   const responseData = await response.json();
   if (responseData.status === "success") {
+    localStorage.setItem("accessToken", responseData.accessToken);
     Swal.fire({
       toast: true,
       position: "top-end",

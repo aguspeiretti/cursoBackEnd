@@ -1,8 +1,8 @@
 import { Router } from "express";
 import passport from "passport";
 import UserManager from "../dao/mongo/managers/users.js";
-import { createHash, validatePassword } from "../utils.js";
-
+import { createHash, generateToken, validatePassword } from "../utils.js";
+import { authToken } from "../middlewares/jwtAuth.js";
 const userManager = new UserManager();
 
 const router = Router();
@@ -73,6 +73,42 @@ router.get("/githubcallback", passport.authenticate("github"), (req, res) => {
     email: user.email,
   };
   res.redirect("/");
+});
+
+router.post("/jwtLogin", async (req, res) => {
+  const { email, password } = req.body;
+  let accessToken;
+  if (email === "admin@admin.com" && password === "123") {
+    //Desde aquí ya puedo inicializar al admin.
+    const user = {
+      id: 0,
+      name: `Admin`,
+      role: "admin",
+      email: "...",
+    };
+    //Adiós a session. GENERO TOKEN
+    accessToken = generateToken(user);
+    res.send({ status: "success", accessToken: accessToken });
+  }
+  let user;
+
+  user = await userManager.getUsersBy({ email }); //Sólo busco por mail
+  if (!user) return res.sendStatus(400);
+  const isValidPassword = await validatePassword(password, user.password);
+  if (!isValidPassword) return res.sendStatus(400);
+  user = {
+    id: user._id,
+    name: `${user.first_name} ${user.last_name}`,
+    email: user.email,
+    role: user.role,
+  };
+  accessToken = generateToken(user);
+  res.send({ status: "success", accessToken });
+});
+
+router.get("/jwtProfile", authToken, async (req, res) => {
+  console.log(req.user);
+  res.send({ status: "success", payload: req.user });
 });
 
 router.post("/restorePassword", async (req, res) => {

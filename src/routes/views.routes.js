@@ -84,4 +84,8 @@ router.get(
   }
 );
 
+router.get("/", (req, res) => {
+  res.render("jwtProfile");
+});
+
 export default router;
