@@ -14,6 +14,7 @@ import productModel from "./dao/mongo/models/products.js";
 import session from "express-session";
 import passport from "passport";
 import initializePassport from "./config/passport.config.js";
+import cookieParser from "cookie-parser";
 
 const app = express();
 const connection = mongoose.connect(
@@ -29,22 +30,9 @@ app.use((req, res, next) => {
 app.engine("handlebars", handlebars.engine());
 app.set("views", `${__dirname}/views`);
 app.set("view engine", "handlebars");
+app.use(cookieParser("sushiapp"));
 
-app.use(passport.initialize());
 initializePassport();
-
-app.use(
-  session({
-    store: new MongoStore({
-      mongoUrl:
-        "mongodb+srv://aguspeiretti:123@agusdb.7mmevwy.mongodb.net/ecommers?retryWrites=true&w=majority",
-      ttl: 36000,
-    }),
-    secret: "sushiapp",
-    resave: false,
-    saveUninitialized: false,
-  })
-);
 
 const server = app.listen(8080, () => console.log("escuchando"));
 const io = new Server(server);
