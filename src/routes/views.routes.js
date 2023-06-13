@@ -13,7 +13,7 @@ const cartsManager = new CartsManager();
 router.get(
   "/",
   passportCall("jwt", { redirect: "/login" }),
-  authRoles("usuario"),
+  authRoles("admin"),
   async (req, res) => {
     console.log(req.user);
     const { page = 1 } = req.query;

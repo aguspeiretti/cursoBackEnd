@@ -51,7 +51,7 @@ const initializePassportStrategies = () => {
           //Desde aquí ya puedo inicializar al admin.
           const user = {
             id: 0,
-            name: `Admin`,
+            name: `Coder admin`,
             role: "admin",
             email: "...",
           };
