@@ -3,18 +3,21 @@ import bcrypt from "bcrypt";
 import { dirname } from "path";
 import jwt from "jsonwebtoken";
 import passport from "passport";
-import { error } from "console";
 
-export const passportCall = (strategy, options) => {
+export const generateToken = (user) => {
+  const token = jwt.sign(user, "jwtSecret", { expiresIn: "24h" });
+  return token;
+};
+
+export const passportCall = (strategy) => {
   return async (req, res, next) => {
     passport.authenticate(strategy, (error, user, info) => {
       if (error) return next(error);
       if (!user) {
-        if (options.redirect) return res.redirect(options.redirect);
         console.log(info);
         return res.status(401).send({
           status: error,
-          error: "usuario no encontrado", //info.message ? info.message : info.toString(),
+          error: info.message ? info.message : info.toString(),
         });
       }
       req.user = user;
@@ -28,10 +31,7 @@ export const cookieExtractor = (req) => {
   if (req && req.cookies) {
     token = req.cookies["authToken"];
   }
-};
-
-export const generateToken = (user) => {
-  const token = jwt.sign(user, "jwtSecret", { expiresIn: "24h" });
+  console.log(token);
   return token;
 };
 

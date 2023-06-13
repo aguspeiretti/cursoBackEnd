@@ -38,26 +38,28 @@ router.post("/login", passportCall("login"), async (req, res) => {
     role: req.user.role,
   };
   const accessToken = generateToken(user);
-  res.cookie("authTocken", accessToken, {
+  res.cookie("authToken", accessToken, {
     maxAge: 1000 * 60 * 60 * 24,
-    signed: true,
     httpOnly: true,
   });
   res.send({ status: "success", message: "Logueado " });
 });
 
 router.post("/logout", (req, res) => {
-  // Destruye la sesión
-  req.session.destroy((err) => {
-    if (err) {
-      console.error("Error al destruir la sesión:", err);
-      return res
-        .status(500)
-        .send({ status: "error", error: "Error al cerrar sesión" });
-    }
+  res.clearCookie("authToken"); // Eliminar la cookie "authToken"
+  res.send({ status: "success", message: "Sesión cerrada correctamente" });
 
-    res.send({ status: "success", message: "Sesión cerrada correctamente" });
-  });
+  // Destruye la sesión
+  // req.session.destroy((err) => {
+  //   if (err) {
+  //     console.error("Error al destruir la sesión:", err);
+  //     return res
+  //       .status(500)
+  //       .send({ status: "error", error: "Error al cerrar sesión" });
+  //   }
+
+  //   res.send({ status: "success", message: "Sesión cerrada correctamente" });
+  // });
 });
 
 router.get("/github", passportCall("github"), (req, res) => {});
@@ -70,7 +72,7 @@ router.get("/githubcallback", passportCall("github"), (req, res) => {
     role: req.user.role,
   };
   const accessToken = generateToken(user);
-  res.cookie("authTocken", accessToken, {
+  res.cookie("authToken", accessToken, {
     maxAge: 1000 * 60 * 60 * 24,
     signed: true,
     httpOnly: true,
@@ -80,10 +82,10 @@ router.get("/githubcallback", passportCall("github"), (req, res) => {
 
 router.post("/jwtLogin", async (req, res) => {});
 
-router.get("/jwtProfile", authToken, async (req, res) => {
-  console.log(req.user);
-  res.send({ status: "success", payload: req.user });
-});
+// router.get("/jwtProfile", authToken, async (req, res) => {
+//   console.log(req.user);
+//   res.send({ status: "success", payload: req.user });
+// });
 
 router.post("/restorePassword", async (req, res) => {
   const { email, password } = req.body;

@@ -10,7 +10,8 @@ const router = Router();
 const productsManager = new ProductsManager();
 const cartsManager = new CartsManager();
 
-router.get("/", async (req, res) => {
+router.get("/", passportCall("jwt"), async (req, res) => {
+  console.log(req.user);
   const { page = 1 } = req.query;
   let { limit = 5, sort = 1 } = req.query;
 
@@ -72,9 +73,9 @@ router.get(
   }
 );
 
-router.get("/", passportCall("jwt"), (req, res) => {
-  console.log(req.user);
-  res.render("jwtProfile", { user: req.user });
-});
+// router.get("/", passportCall("jwt"), (req, res) => {
+//   console.log(req.user);
+//   res.render("jwtProfile", { user: req.user });
+// });
 
 export default router;
