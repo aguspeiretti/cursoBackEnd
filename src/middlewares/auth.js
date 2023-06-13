@@ -18,7 +18,10 @@ export const authRoles = (role) => {
     if (req.user.role != role)
       return res
         .status(403)
-        .send({ status: error, error: "no tienes permiso para acceder aqui" });
+        .send({
+          status: "error",
+          error: "no tienes permiso para acceder aqui",
+        });
     next();
   };
 };

@@ -9,12 +9,12 @@ export const generateToken = (user) => {
   return token;
 };
 
-export const passportCall = (strategy) => {
+export const passportCall = (strategy, options = {}) => {
   return async (req, res, next) => {
     passport.authenticate(strategy, (error, user, info) => {
       if (error) return next(error);
       if (!user) {
-        console.log(info);
+        if (options.redirect) return res.redirect(options.redirect);
         return res.status(401).send({
           status: error,
           error: info.message ? info.message : info.toString(),
