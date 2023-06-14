@@ -7,13 +7,12 @@ import { passportCall } from "../utils.js";
 
 const router = Router();
 
-const productsManager = new ProductsManager();
 const cartsManager = new CartsManager();
 
 router.get(
   "/",
   passportCall("jwt", { redirect: "/login" }),
-  authRoles("admin"),
+  authRoles("usuario"),
   async (req, res) => {
     console.log(req.user);
     const { page = 1 } = req.query;

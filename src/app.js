@@ -10,9 +10,6 @@ import ProductsManager from "./dao/mongo/managers/productManager.js";
 import mongoose from "mongoose";
 import MongoStore from "connect-mongo";
 import messagesModel from "./dao/mongo/models/messages.js";
-import productModel from "./dao/mongo/models/products.js";
-import session from "express-session";
-import passport from "passport";
 import initializePassport from "./config/passport.config.js";
 import cookieParser from "cookie-parser";
 
@@ -30,7 +27,7 @@ app.use((req, res, next) => {
 app.engine("handlebars", handlebars.engine());
 app.set("views", `${__dirname}/views`);
 app.set("view engine", "handlebars");
-app.use(cookieParser());
+app.use(cookieParser("sushiapp"));
 
 initializePassport();
 
