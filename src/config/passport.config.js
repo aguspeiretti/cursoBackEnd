@@ -97,7 +97,7 @@ const initializePassportStrategies = () => {
           let emailGitHub = `${profile._json.login}@github.com`;
 
           const user = await userManager.getUsersBy({ email: emailGitHub });
-          console.log(user);
+
           if (!user) {
             const newUser = {
               first_name: name,

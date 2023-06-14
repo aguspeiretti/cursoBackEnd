@@ -14,7 +14,6 @@ router.get(
   passportCall("jwt", { redirect: "/login" }),
   authRoles("usuario"),
   async (req, res) => {
-    console.log(req.user);
     const { page = 1 } = req.query;
     let { limit = 5, sort = 1 } = req.query;
 

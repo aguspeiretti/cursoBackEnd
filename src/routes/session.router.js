@@ -53,15 +53,15 @@ router.get("/github", passportCall("github"), (req, res) => {});
 
 router.get("/githubcallback", passportCall("github"), (req, res) => {
   const user = {
-    id: req.user.id,
-    name: req.user.name,
+    id: req.user._id,
+    name: req.user.first_name,
     email: req.user.email,
     role: req.user.role,
   };
   const accessToken = generateToken(user);
+
   res.cookie("authToken", accessToken, {
     maxAge: 1000 * 60 * 60 * 24,
-    signed: true,
     httpOnly: true,
   });
   res.redirect("/");
