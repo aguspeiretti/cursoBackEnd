@@ -26,7 +26,7 @@ router.post(
 );
 
 router.get("/registerFail", (req, res) => {
-  res.status(400).send({ status: "error", error: req.session.messages });
+  res.status(400).send({ status: "error", error: req.session.message });
 });
 
 router.post("/login", passportCall("login"), async (req, res) => {

@@ -4,8 +4,10 @@ import { cookieExtractor, createHash, validatePassword } from "../utils.js";
 import UserManager from "../dao/mongo/managers/users.js";
 import GithubStrategy from "passport-github2";
 import { ExtractJwt, Strategy } from "passport-jwt";
+import CartsManager from "../dao/mongo/managers/cart.js";
 
 const userManager = new UserManager();
+const cartManager = new CartsManager();
 
 const LocalStrategy = local.Strategy;
 
@@ -16,6 +18,7 @@ const initializePassportStrategies = () => {
       { passReqToCallback: true, usernameField: "email" },
       async (req, email, password, done) => {
         try {
+          const cart = await cartManager.createCart();
           const { first_name, last_name } = req.body;
           //Número 1! Corrobora si el usuario ya existe.
           const exists = await userManager.getUsersBy({ email });
@@ -30,6 +33,7 @@ const initializePassportStrategies = () => {
             last_name,
             email,
             password: hashedPassword,
+            cart: cart._id,
           };
           const result = await userManager.createUsers(user);
           // Si todo salió bien, Ahí es cuando done debe finalizar bien.
