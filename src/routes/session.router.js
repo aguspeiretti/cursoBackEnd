@@ -11,19 +11,13 @@ const userManager = new UserManager();
 
 const router = Router();
 
-router.post(
-  "/register",
-  passport.authenticate("register", {
-    failureRedirect: "registerFail",
-  }),
-  async (req, res) => {
-    try {
-      res.send({ status: "success", messages: "registered" });
-    } catch (error) {
-      console.log(error);
-    }
+router.post("/register", passportCall("register"), async (req, res) => {
+  try {
+    res.send({ status: "success", messages: "registered" });
+  } catch (error) {
+    console.log(error);
   }
-);
+});
 
 router.get("/registerFail", (req, res) => {
   res.status(400).send({ status: "error", error: req.session.message });

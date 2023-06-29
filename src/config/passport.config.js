@@ -18,11 +18,11 @@ const initializePassportStrategies = () => {
       { passReqToCallback: true, usernameField: "email" },
       async (req, email, password, done) => {
         try {
-          const cart = await cartManager.createCart();
           const { first_name, last_name } = req.body;
           //Número 1! Corrobora si el usuario ya existe.
           const exists = await userManager.getUsersBy({ email });
           //done lo que quiere hacer es DEVOLVERTE un usuario en req.user;
+          const cart = await cartManager.createCart();
           if (exists)
             return done(null, false, { message: "El usuario ya existe" });
           //Número 2! Si el usuario no existe, ahora sí ENCRIPTAMOS SU CONTRASEÑA
