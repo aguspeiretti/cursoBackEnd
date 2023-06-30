@@ -15,7 +15,8 @@ export default class CartsManager {
     return cartsModel.create(cart);
   };
 
-  addProductToCart = async (cid, pid) => {
+  addProductToCart = async (cid, pid, quantity) => {
+    console.log(quantity);
     try {
       // Obtén el carrito correspondiente al ID (cid)
       let cart = await cartsModel.findById(cid);
@@ -26,12 +27,21 @@ export default class CartsManager {
       const existingProductIndex = cart.products.findIndex(
         (product) => product.product == pid
       );
+
       if (existingProductIndex !== -1) {
-        // Si el producto ya existe en el carrito, incrementa la cantidad en 1
-        cart.products[existingProductIndex].quantity += 1;
+        if (quantity) {
+          cart.products[existingProductIndex].quantity = quantity;
+        } else {
+          // Si el producto ya existe en el carrito, incrementa la cantidad en 1
+          cart.products[existingProductIndex].quantity += 1;
+        }
       } else {
-        // Si el producto no existe en el carrito, agrégalo al arreglo de productos
-        cart.products.push({ product: pid, quantity: 1 });
+        if (quantity) {
+          cart.products.push({ product: pid, quantity: quantity });
+        } else {
+          // Si el producto no existe en el carrito, agrégalo al arreglo de productos
+          cart.products.push({ product: pid, quantity: 1 });
+        }
       }
       // Guarda los cambios en la base de datos
       cart = await cart.save();
