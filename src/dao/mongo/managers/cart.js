@@ -15,13 +15,15 @@ export default class CartsManager {
     return cartsModel.create(cart);
   };
 
-  addProductToCart = async (cid, pid, quantity) => {
-    console.log(quantity);
+  addProductToCart = async (pid, cid, quantity) => {
+    console.log(cid);
+
     try {
-      // Obtén el carrito correspondiente al ID (cid)
+      // Obtén el carrito correspondiente al ID (8cid)
       let cart = await cartsModel.findById(cid);
+
       if (!cart) {
-        throw new Error("Carrito no encontrado");
+        throw new Error("Carrito no encontrado!!!");
       }
       // Busca el índice del producto en el arreglo de productos
       const existingProductIndex = cart.products.findIndex(

@@ -1,5 +1,6 @@
-import { productService } from "../services/index.js";
+import { cartService, productService } from "../services/index.js";
 import productModel from "../dao/mongo/models/products.js";
+import { pid } from "process";
 
 const getProducts = async (req, res) => {
   const { page = 1 } = req.query;
@@ -92,11 +93,12 @@ const deleteProduct = async (req, res) => {
 const addProduct = async (req, res) => {
   try {
     const pId = req.body.productId;
-    const user = req.user;
-    console.log(user);
+    const cId = req.user.cart;
+    const result = await cartService.addProductToCartService(pId, cId);
     res.send({
       status: "success",
       message: `llego el id del producto ${pId} `,
+      payload: result,
     });
   } catch (error) {
     console.log(error);

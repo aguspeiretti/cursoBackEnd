@@ -3,8 +3,6 @@ import cartsControllers from "../controllers/carts.controllers.js";
 
 const router = Router();
 
-export default router;
-
 router.get("/", cartsControllers.getCart);
 
 router.get("/:cid", cartsControllers.getCartById);
@@ -18,3 +16,5 @@ router.delete("/:cid/product/:pid", cartsControllers.cartDelete);
 router.delete("/:cid", cartsControllers.cartDeleteById);
 
 router.put("/:cid/products/:pid", cartsControllers.cartPut);
+
+export default router;

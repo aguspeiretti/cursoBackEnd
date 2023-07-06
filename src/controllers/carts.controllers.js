@@ -1,4 +1,5 @@
 import { cartService } from "../services/index.js";
+import productsControllers from "./products.controllers.js";
 
 const getCart = async (req, res) => {
   const carts = await cartService.getCartsService();
@@ -10,7 +11,7 @@ const getCartById = async (req, res) => {
     const { cid } = req.params;
     const carts = await cartService.getCartByIdService({ _id: cid });
     if (!carts)
-      res.status(404).send({ status: "error", error: "product not found" });
+      res.status(404).send({ status: "error", error: "cart not found" });
     res.send({ status: "succes", payload: carts });
   } catch (err) {
     console.log(err);
