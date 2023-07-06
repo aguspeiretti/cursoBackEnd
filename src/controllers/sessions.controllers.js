@@ -19,6 +19,7 @@ const loginPost = async (req, res) => {
     name: req.user.name,
     email: req.user.email,
     role: req.user.role,
+    cart: req.user.cart,
   };
   const accessToken = generateToken(user);
   res.cookie("authToken", accessToken, {

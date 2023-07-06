@@ -89,10 +89,25 @@ const deleteProduct = async (req, res) => {
   res.sendStatus(410);
 };
 
+const addProduct = async (req, res) => {
+  try {
+    const pId = req.body.productId;
+    const user = req.user;
+    console.log(user);
+    res.send({
+      status: "success",
+      message: `llego el id del producto ${pId} `,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export default {
   getProducts,
   postProduct,
   getProductsById,
   putProduct,
   deleteProduct,
+  addProduct,
 };

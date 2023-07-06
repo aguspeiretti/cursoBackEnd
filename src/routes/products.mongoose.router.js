@@ -1,16 +1,22 @@
 import { Router } from "express";
-import ProductsManager from "../dao/mongo/managers/productManager.js";
 import productsControllers from "../controllers/products.controllers.js";
+import { passportCall } from "../utils.js";
+import { authRoles } from "../middlewares/auth.js";
 
 const router = Router();
 
 export default router;
 
-const productsManager = new ProductsManager();
-
 router.get("/", productsControllers.getProducts);
 
 router.post("/", productsControllers.postProduct);
+
+router.post(
+  "/addProduct",
+  passportCall("jwt"),
+  authRoles("usuario"),
+  productsControllers.addProduct
+);
 
 router.get("/:pid", productsControllers.getProductsById);
 
