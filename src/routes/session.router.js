@@ -1,92 +1,28 @@
 import { Router } from "express";
-import passport from "passport";
-import UserManager from "../dao/mongo/managers/users.js";
-import {
-  createHash,
-  generateToken,
-  passportCall,
-  validatePassword,
-} from "../utils.js";
-const userManager = new UserManager();
+import sessionControllers from "../controllers/sessions.controllers.js";
+import { passportCall } from "../utils.js";
 
 const router = Router();
 
-router.post("/register", passportCall("register"), async (req, res) => {
-  try {
-    res.send({ status: "success", messages: "registered" });
-  } catch (error) {
-    console.log(error);
-  }
-});
+router.post(
+  "/register",
+  passportCall("register"),
+  sessionControllers.registerPost
+);
 
-router.get("/registerFail", (req, res) => {
-  res.status(400).send({ status: "error", error: req.session.message });
-});
+router.get("/registerFail", sessionControllers.getRegisterFail);
 
-router.post("/login", passportCall("login"), async (req, res) => {
-  const user = {
-    id: req.user.id,
-    name: req.user.name,
-    email: req.user.email,
-    role: req.user.role,
-  };
-  const accessToken = generateToken(user);
-  res.cookie("authToken", accessToken, {
-    maxAge: 1000 * 60 * 60 * 24,
-    httpOnly: true,
-  });
-  res.send({ status: "success", message: "Logueado " });
-});
+router.post("/login", passportCall("login"), sessionControllers.loginPost);
 
-router.post("/logout", (req, res) => {
-  res.clearCookie("authToken"); // Eliminar la cookie "authToken"
-  res.send({ status: "success", message: "Sesión cerrada correctamente" });
-});
+router.post("/logout", sessionControllers.logOutPost);
 
 router.get("/github", passportCall("github"), (req, res) => {});
 
-router.get("/githubcallback", passportCall("github"), (req, res) => {
-  const user = {
-    id: req.user._id,
-    name: req.user.first_name,
-    email: req.user.email,
-    role: req.user.role,
-  };
-  const accessToken = generateToken(user);
+router.get(
+  "/githubcallback",
+  passportCall("github"),
+  sessionControllers.githubCallback
+);
 
-  res.cookie("authToken", accessToken, {
-    maxAge: 1000 * 60 * 60 * 24,
-    httpOnly: true,
-  });
-  res.redirect("/");
-});
-
-router.post("/restorePassword", async (req, res) => {
-  const { email, password } = req.body;
-
-  const user = await userManager.getUsersBy({ email });
-
-  if (!user)
-    return res
-      .status(400)
-      .send({ status: "error", error: "Usuario no encontrado" });
-  const isSamePassword = await validatePassword(password, user.password);
-
-  if (isSamePassword)
-    return res.status(400).send({
-      status: "error",
-      error: "Error al remplazar el password no puede ser la misma",
-    });
-  const newHassedPassword = await createHash(password);
-  try {
-    await userManager.updateOne(
-      { email },
-      { $set: { password: newHassedPassword } }
-    );
-  } catch (error) {
-    console.log(error);
-  }
-
-  return res.send({ status: "success", messages: "reestablecida" });
-});
+router.post("/restorePassword", sessionControllers.restorePaswordPost);
 export default router;

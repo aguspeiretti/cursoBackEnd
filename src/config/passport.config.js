@@ -5,6 +5,7 @@ import UserManager from "../dao/mongo/managers/users.js";
 import GithubStrategy from "passport-github2";
 import { ExtractJwt, Strategy } from "passport-jwt";
 import CartsManager from "../dao/mongo/managers/cart.js";
+import config from "./config.js";
 
 const userManager = new UserManager();
 const cartManager = new CartsManager();
@@ -51,7 +52,7 @@ const initializePassportStrategies = () => {
       { usernameField: "email" },
       async (email, password, done) => {
         // PASSPORT SÓLO DEBE DEVOLVER AL USUARIO FINAL, ÉL NO ES RESPONSABLE DE LA SESIÓN
-        if (email === "adminCoder@coder.com" && password === "adminCod3r123") {
+        if (email === config.adminName && password === config.adminPasword) {
           //Desde aquí ya puedo inicializar al admin.
           const user = {
             id: 0,

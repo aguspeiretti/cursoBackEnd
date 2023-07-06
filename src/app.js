@@ -12,11 +12,11 @@ import MongoStore from "connect-mongo";
 import messagesModel from "./dao/mongo/models/messages.js";
 import initializePassport from "./config/passport.config.js";
 import cookieParser from "cookie-parser";
+import config from "./config/config.js";
 
 const app = express();
-const connection = mongoose.connect(
-  "mongodb+srv://aguspeiretti:123@agusdb.7mmevwy.mongodb.net/ecommers?retryWrites=true&w=majority"
-);
+const url = config.mongoUrl;
+const connection = mongoose.connect(url);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(`${__dirname}/public`));
@@ -31,7 +31,8 @@ app.use(cookieParser());
 
 initializePassport();
 
-const server = app.listen(8080, () => console.log("escuchando"));
+const PORT = config.port || 8080;
+const server = app.listen(PORT, () => console.log("escuchando"));
 const io = new Server(server);
 
 app.use("/api/products", ProductsRouter);
