@@ -1,28 +1,68 @@
+<nav class="navBar">
+  <ul>
+    <div class="Logo">
+      <a href="/"><img src="/img/sushilogo.png" alt="" /> </a>
+      <a href="/"> <p>SUSHIAPP</p></a>
+    </div>
+
+    <div class="divsSing">
+      <div class="enlaces">
+        <ul>
+          <a href="/products"><li>PRODUCTOS</li></a>
+          <li>PROMOS</li>
+          <a
+            href="https://www.instagram.com/agupeiretti/?hl=es"
+            target="_blank"
+          ><li>SEGUINOS</li></a>
+        </ul>
+      </div>
+      <div>
+        <a href="/cart"><li><i
+              class="fa-solid fa-cart-shopping"
+              style="color: #ffffff;"
+            ></i></li></a>
+      </div>
+      <div class="logoutContainer">
+        <button id="loguotButton">Logout</button>
+      </div>
+
+    </div>
+
+  </ul>
+</nav>
+
 <div id="cartContainer">
   <h1>Carts</h1>
   <div id="productContainer">
-    
- {{#each carts}}
-   <div class="carritoSeparado">
-    <p>Carrito : {{_id}}</p>
-      {{#each products}}
-       <div id="cardCart">
-      <div> 
-      <img src="{{product.thumbnail}}" alt="">
-      <p>Producto :{{product.title}}</p>
-      </div>
-      <p>Categoria :{{product.category}}</p>
-      <p>Cantindad :{{quantity}}</p>
-      </div>
-       {{/each}}
 
-   </div>
-      
-  
-  {{/each}}
-  
+    <div class="carritoSeparado">
+      <p class="cart" data-cart-id="{{carts._id}}">Carrito : {{carts._id}}</p>
+      {{#each carts.products}}
+        <div id="cardCart">
+          <div>
+            <img src="{{product.thumbnail}}" alt="" />
+            <p>Producto: {{product.title}}</p>
+          </div>
+
+          <p>Categoria: {{product.category}}</p>
+          <p>Precio : {{product.price}}</p>
+          <p>Unidades:</p>
+          <button class="decrement" data-product-id={{product._id}}>-</button>
+          <span id="quantity">{{quantity}}</span>
+          <button class="increment" data-product-id={{product._id}}>+</button>
+          <button
+            class="remove"
+            data-product-id={{product._id}}
+          >Eliminar</button>
+        </div>
+      {{/each}}
+
+    </div>
+
   </div>
-  
- 
-
+  <button>FINALIZAR COMPRA</button>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/js/contador.js"></script>
+<script src="/js/logout.js"></script>

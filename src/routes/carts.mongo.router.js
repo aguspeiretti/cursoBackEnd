@@ -11,7 +11,7 @@ router.post("/", cartsControllers.createCart);
 
 router.post("/:cid/products/:pid", cartsControllers.cartPost);
 
-router.delete("/:cid/product/:pid", cartsControllers.cartDelete);
+router.delete("/:cid/products/:pid", cartsControllers.cartDelete);
 
 router.delete("/:cid", cartsControllers.cartDeleteById);
 

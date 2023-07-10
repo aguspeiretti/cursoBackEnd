@@ -14,7 +14,6 @@ const getProducts = async (req, res) => {
     ...rest
   } = await productModel.paginate({}, { page, limit: 3, lean: true });
   const products = docs;
-  console.log(products);
   req.io.emit("updateProducts", products);
   res.send({
     status: "succes",

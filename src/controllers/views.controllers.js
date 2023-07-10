@@ -17,7 +17,7 @@ const getView = async (req, res) => {
 
   const products = docs;
 
-  res.render("home", {
+  res.render("products", {
     user: req.user,
     products,
     page: rest.page,
@@ -29,12 +29,17 @@ const getView = async (req, res) => {
   });
 };
 
+const getViewHome = async (req, res) => {
+  res.render("home", { css: "home" });
+};
+
 const getViewRealTime = async (req, res) => {
   res.render("realTimeProducts", { css: "realTimeProducts" });
 };
 
 const getCartView = async (req, res) => {
-  const carts = await cartService.getCartsService();
+  const cId = req.user.cart;
+  const carts = await cartService.getCartByIdService(cId).lean();
   res.render("cart", { carts, css: "cart" });
 };
 
@@ -70,4 +75,5 @@ export default {
   getRegisterView,
   getLoginView,
   getRestorePaswordView,
+  getViewHome,
 };

@@ -1,5 +1,5 @@
 import { cartService } from "../services/index.js";
-import productsControllers from "./products.controllers.js";
+import { productService } from "../services/index.js";
 
 const getCart = async (req, res) => {
   const carts = await cartService.getCartsService();
@@ -8,10 +8,10 @@ const getCart = async (req, res) => {
 
 const getCartById = async (req, res) => {
   try {
-    const { cid } = req.params;
-    const carts = await cartService.getCartByIdService({ _id: cid });
+    const cId = req.user.cart;
+    const carts = await cartService.getCartByIdService({ _id: cId });
     if (!carts)
-      res.status(404).send({ status: "error", error: "cart not found" });
+      res.status(404).send({ status: "error", error: "product not found" });
     res.send({ status: "succes", payload: carts });
   } catch (err) {
     console.log(err);
@@ -52,7 +52,7 @@ const cartDelete = async (req, res) => {
       cid,
       pid
     );
-    res.send({ status: "succes", payload: deletedProductCart });
+    res.send({ status: "success", payload: deletedProductCart });
   } catch (err) {
     console.log(err);
   }
@@ -71,12 +71,13 @@ const cartDeleteById = async (req, res) => {
 const cartPut = async (req, res) => {
   try {
     const { cid, pid } = req.params;
-    const newQuantity = req.body;
+    const { quantity } = req.body;
     const updatedCart = await cartService.updateProductInCartService(
       cid,
       pid,
-      newQuantity
+      quantity
     );
+    console.log(cid, pid, quantity);
 
     res.send({ status: "success", payload: updatedCart });
   } catch (err) {

@@ -1,67 +1,110 @@
-<h1>Products</h1>
-{{#if user}}
-  <div class="saludo">
-    <h1>Hola {{user.name}} ! </h1>
-    <p>Rol: {{user.role}}</p>
-  </div>
-  <div class="logoutContainer">
-    <button id="loguotButton">Logout</button>
-  </div>
-
-{{/if}}
-
-<div id="controles">
-  <form action="/" method="GET">
-    <div id="labels">
-      <label for="limit">Cantidad de productos:</label>
-      <select name="limit" id="limit">
-        <option value="1">1</option>
-        <option value="3">3</option>
-        <option value="5">5</option>
-      </select>
-
-      <label for="sort">Ordenar por:</label>
-      <select name="sort" id="sort">
-        <option value="1">Menor precio</option>
-        <option value="-1">Mayor precio</option>
-      </select>
+<nav class="navBar">
+  <ul>
+    <div class="Logo">
+      <a href="/"><img src="/img/sushilogo.png" alt="" /> </a>
+      <a href="/"> <p>SUSHIAPP</p></a>
     </div>
-    <button type="submit">Aplicar cambios</button>
-  </form>
-</div>
 
-<div id="contenedorPricipal">
-  <div id="product-container">
-    {{#each products}}
-      <div>
-        <div class="cardContainer">
-          <h2>{{title}}</h2>
-          <p class="category">{{category}}</p>
-          <div class="imgConteiner">
-            <img src="{{thumbnail}}" alt="{{title}}" />
-          </div>
-          <p class="description">{{description}}</p>
-          <p class="price">$ {{price}}</p>
-          <button id="{{_id}}" class="add-to-cart-button">Agrecar al carrito</button>
-        </div>
+    <div class="divsSing">
+      <div class="enlaces">
+        <ul>
+          <a href="/products"><li>PRODUCTOS</li></a>
+          <li>PROMOS</li>
+          <a
+            href="https://www.instagram.com/agupeiretti/?hl=es"
+            target="_blank"
+          ><li>SEGUINOS</li></a>
+        </ul>
       </div>
-    {{/each}}
+      <div>
+        <a href="/cart"><li><i
+              class="fa-solid fa-cart-shopping"
+              style="color: #ffffff;"
+            ></i></li></a>
+      </div>
+      <div class="logoutContainer">
+        <button id="loguotButton">Logout</button>
+      </div>
+
+    </div>
+
+  </ul>
+</nav>
+<div class="carousel">
+  <div class="carousel-container">
+    <div class="carousel-slide">
+      <img src="/img/tamago.jpg" alt="Imagen 1" />
+      <p class="sushi">SUSHI YES <br /></p>
+      <p class="maybe"> YOU MAYBE</p>
+    </div>
+    <div class="carousel-slide">
+      <img src="/img/avocado.jpg" alt="Imagen 2" />
+      <p class="sushi">ALL <br />YOU<br />NEED<br />IS</p>
+      <p class="maybe"> SUSHI</p>
+    </div>
   </div>
-
-  <div id="pageHandler">
-    {{#if hasPrevPage}}
-      <a href="/?page={{prevPage}}"><button> - </button></a>
-    {{/if}}
-
-    <p>{{page}}</p>
-
-    {{#if hasNextPage}}
-      <a href="/?page={{nextPage}}"><button> + </button></a>
-    {{/if}}
+</div>
+<div class="titulo2">
+  <h2>NUESTROS ESPACIOS</h2>
+</div>
+<div class="locales">
+  <div class="imgContainer">
+    <div>
+      <img
+        src="https://www.lavoz.com.ar/resizer/W2b65wFU2WyQOEFmH_TyNTuzjrQ=/980x640/smart/filters:quality(75):format(webp)/cloudfront-us-east-1.images.arcpublishing.com/grupoclarin/YZ4KRVPMI5D4XGFXAMJR32Q3MY.jpg"
+        alt=""
+      />
+    </div>
+    <div>
+      <img
+        src="https://www.infogastronomica.com.ar/wp-content/uploads/2018/11/g1.jpg"
+        alt=""
+      />
+    </div>
   </div>
 
 </div>
+<div class="titulo2">
+  <h2>PROMOS DELIVERY</h2>
+</div>
+<div class="carousel-promo">
+  <div class="carousel-container-promo">
+    <div class="carousel-slide-promo">
+      <img class="promo1" src="/img/promo1.jpg" alt="Imagen 1" />
+    </div>
+    <div class="carousel-slide-promo">
+      <img src="/img/promo2.jpg" alt="Imagen 2" />
+    </div>
+    <div class="carousel-slide-promo">
+      <img src="/img/promo3.jpg" alt="Imagen 2" />
+    </div>
+  </div>
+</div>
 
+<div class="linksHome">
+  <div class="imgContainer">
+    <div>
+      <img
+        src="https://www.sabervivirtv.com/medio/2023/06/12/hacer-sushi-en-casa_750fa26d_1320922361_230612165005_1280x720.jpg"
+        alt=""
+      />
+      <a href="/products"><button>PRODUCTOS</button></a>
+    </div>
+    <div>
+      <img
+        src="https://s2.abcstatics.com/media/bienestar/2021/06/18/sushi-casero-1-kQKB--1248x698@abc.jpeg"
+        alt=""
+      />
+      <a href="/promo"><button>PROMOCIONES</button></a>
+    </div>
+  </div>
+</div>
+<footer>
+  <i class="fa-brands fa-instagram" style="color: #ffffff;"></i>
+  <i class="fa-brands fa-linkedin" style="color: #ffffff;"></i>
+  <i class="fa-brands fa-github" style="color: #ffffff;"></i>
+</footer>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="/js/productHandler.js"></script>
 <script src="/js/logout.js"></script>
+<script src="/js/carrousel.js"></script>

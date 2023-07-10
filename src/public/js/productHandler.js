@@ -14,7 +14,16 @@ Array.from(addToCartButtons).forEach((button) => {
     })
       .then((response) => response.json())
       .then((result) => {
-        console.log(result.message);
+        if (result.status === "success") {
+          Swal.fire({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            title: `Producto agregado!`,
+            icon: "success",
+          });
+        }
       })
       .catch((error) => {
         console.log("Error:", error);

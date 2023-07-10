@@ -20,7 +20,7 @@ body {
 }
 #cartContainer h1 {
   color: #e7832b;
-  margin-top: 40px;
+  margin-top: 80px;
   margin-bottom: 60px;
 }
 
@@ -61,4 +61,30 @@ body {
   color: white;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+.logoutContainer {
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.logoutContainer button {
+  background-color: transparent;
+  border: 2px solid #e7832b;
+  width: 100px;
+  height: 30px;
+  border-radius: 40px;
+  color: white;
+  cursor: pointer;
+}
+button {
+  margin-top: 10px;
+  height: 30px;
+  padding: 5px;
+  border-radius: 15px;
+  border: 2px solid #e7832b !important;
+  background-color: #1e1e1e;
+  color: white;
+  cursor: pointer;
 }

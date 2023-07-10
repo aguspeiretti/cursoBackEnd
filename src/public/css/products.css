@@ -14,7 +14,7 @@ body {
 .saludo {
   position: absolute;
   top: 85px;
-  left: 20px;
+  right: 20px;
   font-size: 10px;
   display: flex;
   flex-direction: column;
@@ -25,9 +25,6 @@ body {
   color: #e7832b;
 }
 .logoutContainer {
-  position: absolute;
-  top: 85px;
-  right: 20px;
   font-size: 10px;
   display: flex;
   flex-direction: column;
@@ -41,13 +38,12 @@ body {
   height: 30px;
   border-radius: 40px;
   color: white;
-  margin-top: 20px;
   cursor: pointer;
 }
 
 h1 {
   color: #e7832b;
-  margin-top: 30px;
+  margin-top: 80px;
   margin-bottom: 5px;
 }
 

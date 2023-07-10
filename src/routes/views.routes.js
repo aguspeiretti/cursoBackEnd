@@ -9,15 +9,27 @@ const router = Router();
 const cartsManager = new CartsManager();
 
 router.get(
-  "/",
-  passportCall("jwt", { redirect: "/login" }),
+  "/products",
+  passportCall("jwt"),
   authRoles("usuario"),
   viewsControllers.getView
 );
 
+router.get(
+  "/",
+  passportCall("jwt", { redirect: "/login" }),
+  authRoles("usuario"),
+  viewsControllers.getViewHome
+);
+
 router.get("/realTimeProducts", viewsControllers.getViewRealTime);
 
-router.get("/cart", viewsControllers.getCartView);
+router.get(
+  "/cart",
+  passportCall("jwt", { redirect: "/login" }),
+  authRoles("usuario"),
+  viewsControllers.getCartView
+);
 
 router.get("/cart/:cid", viewsControllers.getCartViewById);
 
