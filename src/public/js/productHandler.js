@@ -1,3 +1,5 @@
+//agrego el producto al carrito
+
 const addToCartButtons = document.getElementsByClassName("add-to-cart-button");
 Array.from(addToCartButtons).forEach((button) => {
   button.addEventListener("click", async (event) => {
@@ -19,7 +21,7 @@ Array.from(addToCartButtons).forEach((button) => {
             toast: true,
             position: "top-end",
             showConfirmButton: false,
-            timer: 3000,
+            timer: 1000,
             title: `Producto agregado!`,
             icon: "success",
           });

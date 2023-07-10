@@ -3,6 +3,9 @@
   letter-spacing: 2px;
   font-weight: 600;
 }
+* > button {
+  cursor: pointer;
+}
 
 .navBar {
   width: 100vw;
