@@ -26,7 +26,7 @@ const loginPost = async (req, res) => {
     maxAge: 1000 * 60 * 60 * 24,
     httpOnly: true,
   });
-  res.send({ status: "success", message: "Logueado " });
+  res.send({ status: "success", payload: user });
 };
 
 const logOutPost = async (req, res) => {

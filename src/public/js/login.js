@@ -25,7 +25,11 @@ form.addEventListener("submit", async (event) => {
       title: `Logueado!`,
       icon: "success",
     });
-    window.location.replace("/");
+    if (responseData.payload.role === "admin") {
+      window.location.replace("/admin");
+    } else {
+      window.location.replace("/");
+    }
   } else {
     Swal.fire({
       toast: true,

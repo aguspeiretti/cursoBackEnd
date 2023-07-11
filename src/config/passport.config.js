@@ -103,12 +103,13 @@ const initializePassportStrategies = () => {
           let emailGitHub = `${profile._json.login}@github.com`;
 
           const user = await userManager.getUsersBy({ email: emailGitHub });
-
+          const cart = await cartManager.createCart();
           if (!user) {
             const newUser = {
               first_name: name,
               email: emailGitHub,
               password: "",
+              cart: cart._id,
             };
             const result = await userManager.createUsers(newUser);
             return done(null, result);
