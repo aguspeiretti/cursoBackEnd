@@ -41,4 +41,11 @@ router.get("/login", viewsControllers.getLoginView);
 
 router.get("/restorePassword", viewsControllers.getRestorePaswordView);
 
+router.get(
+  "/admin",
+  passportCall("jwt"),
+  authRoles("admin"),
+  viewsControllers.getAdminView
+);
+
 export default router;

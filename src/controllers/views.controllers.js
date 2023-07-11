@@ -66,6 +66,10 @@ const getRestorePaswordView = async (req, res) => {
   res.render("restorePassword", { css: "login" });
 };
 
+const getAdminView = async (req, res) => {
+  res.render("admin", { css: "admin" });
+};
+
 export default {
   getView,
   getViewRealTime,
@@ -76,4 +80,5 @@ export default {
   getLoginView,
   getRestorePaswordView,
   getViewHome,
+  getAdminView,
 };
