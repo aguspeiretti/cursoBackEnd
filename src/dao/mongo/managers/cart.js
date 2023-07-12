@@ -114,4 +114,6 @@ export default class CartsManager {
       console.log(error);
     }
   };
+
+  finalizePurchase = async () => {};
 }

@@ -40,6 +40,13 @@ const getViewRealTime = async (req, res) => {
 const getCartView = async (req, res) => {
   const cId = req.user.cart;
   const carts = await cartService.getCartByIdService(cId).lean();
+  for (const item of carts.products) {
+    const { product, quantity } = item;
+    const price = product.price;
+    const subtotal = price * quantity;
+    item.subtotal = subtotal;
+  }
+
   res.render("cart", { carts, css: "cart" });
 };
 

@@ -23,4 +23,7 @@ export default class CartService {
   deleteCartService = (cid) => {
     return this.dao.deleteCart(cid);
   };
+  finalizePurchase = () => {
+    return this.dao.finalizePurchase();
+  };
 }
