@@ -28,8 +28,16 @@ const getProducts = async (req, res) => {
 };
 
 const postProduct = async (req, res) => {
-  const { title, description, thumbnail, code, price, status, category } =
-    req.body;
+  const {
+    title,
+    description,
+    thumbnail,
+    code,
+    price,
+    status,
+    category,
+    stock,
+  } = req.body;
 
   if (
     !title ||
@@ -38,6 +46,7 @@ const postProduct = async (req, res) => {
     !code ||
     !price ||
     !status ||
+    !stock ||
     !category
   )
     return res
@@ -50,6 +59,7 @@ const postProduct = async (req, res) => {
     thumbnail,
     code,
     price,
+    stock,
     status,
     category,
   };

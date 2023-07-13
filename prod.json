@@ -1,0 +1,242 @@
+[
+  {
+    "title": "Sushi de salmón",
+    "description": "Delicioso sushi de salmón fresco",
+    "thumbnail": [
+      "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/53f59ee3-60ce-4d32-8885-c6f05457259c/dfobz3r-64203524-351d-44a7-8ba8-c040aa9d79dc.png/v1/fill/w_600,h_600/sushi_png_transparent_background__113__by_anavringold_dfobz3r-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzUzZjU5ZWUzLTYwY2UtNGQzMi04ODg1LWM2ZjA1NDU3MjU5Y1wvZGZvYnozci02NDIwMzUyNC0zNTFkLTQ0YTctOGJhOC1jMDQwYWE5ZDc5ZGMucG5nIiwiaGVpZ2h0IjoiPD02MDAiLCJ3aWR0aCI6Ijw9NjAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLndhdGVybWFyayJdLCJ3bWsiOnsicGF0aCI6Ilwvd21cLzUzZjU5ZWUzLTYwY2UtNGQzMi04ODg1LWM2ZjA1NDU3MjU5Y1wvYW5hdnJpbmdvbGQtNC5wbmciLCJvcGFjaXR5Ijo5NSwicHJvcG9ydGlvbnMiOjAuNDUsImdyYXZpdHkiOiJjZW50ZXIifX0.JlpYeslGuPFz4TgW7KxD22Ey4HZ_sbp3XC50zNgtDx4"
+    ],
+    "code": "SAL001",
+    "price": 9.99,
+    "stock": 10,
+    "status": true,
+    "category": "Sushi"
+  },
+  {
+    "title": "Sushi de atún",
+    "description": "Exquisito sushi de atún fresco",
+    "thumbnail": [
+      "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/53f59ee3-60ce-4d32-8885-c6f05457259c/dfobz3r-64203524-351d-44a7-8ba8-c040aa9d79dc.png/v1/fill/w_600,h_600/sushi_png_transparent_background__113__by_anavringold_dfobz3r-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzUzZjU5ZWUzLTYwY2UtNGQzMi04ODg1LWM2ZjA1NDU3MjU5Y1wvZGZvYnozci02NDIwMzUyNC0zNTFkLTQ0YTctOGJhOC1jMDQwYWE5ZDc5ZGMucG5nIiwiaGVpZ2h0IjoiPD02MDAiLCJ3aWR0aCI6Ijw9NjAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLndhdGVybWFyayJdLCJ3bWsiOnsicGF0aCI6Ilwvd21cLzUzZjU5ZWUzLTYwY2UtNGQzMi04ODg1LWM2ZjA1NDU3MjU5Y1wvYW5hdnJpbmdvbGQtNC5wbmciLCJvcGFjaXR5Ijo5NSwicHJvcG9ydGlvbnMiOjAuNDUsImdyYXZpdHkiOiJjZW50ZXIifX0.JlpYeslGuPFz4TgW7KxD22Ey4HZ_sbp3XC50zNgtDx4"
+    ],
+    "code": "ATN001",
+    "price": 12.99,
+    "stock": 10,
+    "status": true,
+    "category": "Sushi"
+  },
+  {
+    "title": "Sushi de langostino",
+    "description": "Delicioso sushi de langostinos frescos",
+    "thumbnail": [
+      "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/53f59ee3-60ce-4d32-8885-c6f05457259c/dfobz3r-64203524-351d-44a7-8ba8-c040aa9d79dc.png/v1/fill/w_600,h_600/sushi_png_transparent_background__113__by_anavringold_dfobz3r-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzUzZjU5ZWUzLTYwY2UtNGQzMi04ODg1LWM2ZjA1NDU3MjU5Y1wvZGZvYnozci02NDIwMzUyNC0zNTFkLTQ0YTctOGJhOC1jMDQwYWE5ZDc5ZGMucG5nIiwiaGVpZ2h0IjoiPD02MDAiLCJ3aWR0aCI6Ijw9NjAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLndhdGVybWFyayJdLCJ3bWsiOnsicGF0aCI6Ilwvd21cLzUzZjU5ZWUzLTYwY2UtNGQzMi04ODg1LWM2ZjA1NDU3MjU5Y1wvYW5hdnJpbmdvbGQtNC5wbmciLCJvcGFjaXR5Ijo5NSwicHJvcG9ydGlvbnMiOjAuNDUsImdyYXZpdHkiOiJjZW50ZXIifX0.JlpYeslGuPFz4TgW7KxD22Ey4HZ_sbp3XC50zNgtDx4"
+    ],
+    "code": "LNG001",
+    "price": 11.99,
+    "stock": 10,
+    "status": true,
+    "category": "Sushi"
+  },
+  {
+    "title": "Sushi de camarón",
+    "description": "Delicioso sushi de camarón fresco",
+    "thumbnail": [
+      "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/53f59ee3-60ce-4d32-8885-c6f05457259c/dfobz3r-64203524-351d-44a7-8ba8-c040aa9d79dc.png/v1/fill/w_600,h_600/sushi_png_transparent_background__113__by_anavringold_dfobz3r-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzUzZjU5ZWUzLTYwY2UtNGQzMi04ODg1LWM2ZjA1NDU3MjU5Y1wvZGZvYnozci02NDIwMzUyNC0zNTFkLTQ0YTctOGJhOC1jMDQwYWE5ZDc5ZGMucG5nIiwiaGVpZ2h0IjoiPD02MDAiLCJ3aWR0aCI6Ijw9NjAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLndhdGVybWFyayJdLCJ3bWsiOnsicGF0aCI6Ilwvd21cLzUzZjU5ZWUzLTYwY2UtNGQzMi04ODg1LWM2ZjA1NDU3MjU5Y1wvYW5hdnJpbmdvbGQtNC5wbmciLCJvcGFjaXR5Ijo5NSwicHJvcG9ydGlvbnMiOjAuNDUsImdyYXZpdHkiOiJjZW50ZXIifX0.JlpYeslGuPFz4TgW7KxD22Ey4HZ_sbp3XC50zNgtDx4"
+    ],
+    "code": "CMR001",
+    "price": 10.99,
+    "stock": 10,
+    "status": true,
+    "category": "Sushi"
+  },
+  {
+    "title": "Sushi de pulpo",
+    "description": "Delicioso sushi de pulpo fresco",
+    "thumbnail": [
+      "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/53f59ee3-60ce-4d32-8885-c6f05457259c/dfobz3r-64203524-351d-44a7-8ba8-c040aa9d79dc.png/v1/fill/w_600,h_600/sushi_png_transparent_background__113__by_anavringold_dfobz3r-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzUzZjU5ZWUzLTYwY2UtNGQzMi04ODg1LWM2ZjA1NDU3MjU5Y1wvZGZvYnozci02NDIwMzUyNC0zNTFkLTQ0YTctOGJhOC1jMDQwYWE5ZDc5ZGMucG5nIiwiaGVpZ2h0IjoiPD02MDAiLCJ3aWR0aCI6Ijw9NjAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLndhdGVybWFyayJdLCJ3bWsiOnsicGF0aCI6Ilwvd21cLzUzZjU5ZWUzLTYwY2UtNGQzMi04ODg1LWM2ZjA1NDU3MjU5Y1wvYW5hdnJpbmdvbGQtNC5wbmciLCJvcGFjaXR5Ijo5NSwicHJvcG9ydGlvbnMiOjAuNDUsImdyYXZpdHkiOiJjZW50ZXIifX0.JlpYeslGuPFz4TgW7KxD22Ey4HZ_sbp3XC50zNgtDx4"
+    ],
+    "code": "PLP001",
+    "price": 13.99,
+    "stock": 10,
+    "status": true,
+    "category": "Sushi"
+  },
+  {
+    "title": "Sushi de anguila",
+    "description": "Exquisito sushi de anguila fresca",
+    "thumbnail": [
+      "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/53f59ee3-60ce-4d32-8885-c6f05457259c/dfobz3r-64203524-351d-44a7-8ba8-c040aa9d79dc.png/v1/fill/w_600,h_600/sushi_png_transparent_background__113__by_anavringold_dfobz3r-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzUzZjU5ZWUzLTYwY2UtNGQzMi04ODg1LWM2ZjA1NDU3MjU5Y1wvZGZvYnozci02NDIwMzUyNC0zNTFkLTQ0YTctOGJhOC1jMDQwYWE5ZDc5ZGMucG5nIiwiaGVpZ2h0IjoiPD02MDAiLCJ3aWR0aCI6Ijw9NjAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLndhdGVybWFyayJdLCJ3bWsiOnsicGF0aCI6Ilwvd21cLzUzZjU5ZWUzLTYwY2UtNGQzMi04ODg1LWM2ZjA1NDU3MjU5Y1wvYW5hdnJpbmdvbGQtNC5wbmciLCJvcGFjaXR5Ijo5NSwicHJvcG9ydGlvbnMiOjAuNDUsImdyYXZpdHkiOiJjZW50ZXIifX0.JlpYeslGuPFz4TgW7KxD22Ey4HZ_sbp3XC50zNgtDx4"
+    ],
+    "code": "ANL001",
+    "price": 14.99,
+    "stock": 10,
+    "status": true,
+    "category": "Sushi"
+  },
+  {
+    "title": "Sushi de pez mantequilla",
+    "description": "Delicioso sushi de pez mantequilla fresco",
+    "thumbnail": [
+      "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/53f59ee3-60ce-4d32-8885-c6f05457259c/dfobz3r-64203524-351d-44a7-8ba8-c040aa9d79dc.png/v1/fill/w_600,h_600/sushi_png_transparent_background__113__by_anavringold_dfobz3r-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzUzZjU5ZWUzLTYwY2UtNGQzMi04ODg1LWM2ZjA1NDU3MjU5Y1wvZGZvYnozci02NDIwMzUyNC0zNTFkLTQ0YTctOGJhOC1jMDQwYWE5ZDc5ZGMucG5nIiwiaGVpZ2h0IjoiPD02MDAiLCJ3aWR0aCI6Ijw9NjAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLndhdGVybWFyayJdLCJ3bWsiOnsicGF0aCI6Ilwvd21cLzUzZjU5ZWUzLTYwY2UtNGQzMi04ODg1LWM2ZjA1NDU3MjU5Y1wvYW5hdnJpbmdvbGQtNC5wbmciLCJvcGFjaXR5Ijo5NSwicHJvcG9ydGlvbnMiOjAuNDUsImdyYXZpdHkiOiJjZW50ZXIifX0.JlpYeslGuPFz4TgW7KxD22Ey4HZ_sbp3XC50zNgtDx4"
+    ],
+    "code": "PM001",
+    "price": 15.99,
+    "stock": 10,
+    "status": true,
+    "category": "Sushi"
+  },
+  {
+    "title": "Sushi de calamar",
+    "description": "Delicioso sushi de calamar fresco",
+    "thumbnail": [
+      "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/53f59ee3-60ce-4d32-8885-c6f05457259c/dfobz3r-64203524-351d-44a7-8ba8-c040aa9d79dc.png/v1/fill/w_600,h_600/sushi_png_transparent_background__113__by_anavringold_dfobz3r-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzUzZjU5ZWUzLTYwY2UtNGQzMi04ODg1LWM2ZjA1NDU3MjU5Y1wvZGZvYnozci02NDIwMzUyNC0zNTFkLTQ0YTctOGJhOC1jMDQwYWE5ZDc5ZGMucG5nIiwiaGVpZ2h0IjoiPD02MDAiLCJ3aWR0aCI6Ijw9NjAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLndhdGVybWFyayJdLCJ3bWsiOnsicGF0aCI6Ilwvd21cLzUzZjU5ZWUzLTYwY2UtNGQzMi04ODg1LWM2ZjA1NDU3MjU5Y1wvYW5hdnJpbmdvbGQtNC5wbmciLCJvcGFjaXR5Ijo5NSwicHJvcG9ydGlvbnMiOjAuNDUsImdyYXZpdHkiOiJjZW50ZXIifX0.JlpYeslGuPFz4TgW7KxD22Ey4HZ_sbp3XC50zNgtDx4"
+    ],
+    "code": "CLM001",
+    "price": 9.99,
+    "stock": 10,
+    "status": true,
+    "category": "Sushi"
+  },
+  {
+    "title": "Sushi de cangrejo",
+    "description": "Delicioso sushi de cangrejo fresco",
+    "thumbnail": [
+      "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/53f59ee3-60ce-4d32-8885-c6f05457259c/dfobz3r-64203524-351d-44a7-8ba8-c040aa9d79dc.png/v1/fill/w_600,h_600/sushi_png_transparent_background__113__by_anavringold_dfobz3r-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzUzZjU5ZWUzLTYwY2UtNGQzMi04ODg1LWM2ZjA1NDU3MjU5Y1wvZGZvYnozci02NDIwMzUyNC0zNTFkLTQ0YTctOGJhOC1jMDQwYWE5ZDc5ZGMucG5nIiwiaGVpZ2h0IjoiPD02MDAiLCJ3aWR0aCI6Ijw9NjAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLndhdGVybWFyayJdLCJ3bWsiOnsicGF0aCI6Ilwvd21cLzUzZjU5ZWUzLTYwY2UtNGQzMi04ODg1LWM2ZjA1NDU3MjU5Y1wvYW5hdnJpbmdvbGQtNC5wbmciLCJvcGFjaXR5Ijo5NSwicHJvcG9ydGlvbnMiOjAuNDUsImdyYXZpdHkiOiJjZW50ZXIifX0.JlpYeslGuPFz4TgW7KxD22Ey4HZ_sbp3XC50zNgtDx4"
+    ],
+    "code": "CGR001",
+    "price": 11.99,
+    "stock": 10,
+    "status": true,
+    "category": "Sushi"
+  },
+  {
+    "title": "Sushi de vegetales",
+    "description": "Exquisito sushi de vegetales frescos",
+    "thumbnail": [
+      "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/53f59ee3-60ce-4d32-8885-c6f05457259c/dfobz3r-64203524-351d-44a7-8ba8-c040aa9d79dc.png/v1/fill/w_600,h_600/sushi_png_transparent_background__113__by_anavringold_dfobz3r-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzUzZjU5ZWUzLTYwY2UtNGQzMi04ODg1LWM2ZjA1NDU3MjU5Y1wvZGZvYnozci02NDIwMzUyNC0zNTFkLTQ0YTctOGJhOC1jMDQwYWE5ZDc5ZGMucG5nIiwiaGVpZ2h0IjoiPD02MDAiLCJ3aWR0aCI6Ijw9NjAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLndhdGVybWFyayJdLCJ3bWsiOnsicGF0aCI6Ilwvd21cLzUzZjU5ZWUzLTYwY2UtNGQzMi04ODg1LWM2ZjA1NDU3MjU5Y1wvYW5hdnJpbmdvbGQtNC5wbmciLCJvcGFjaXR5Ijo5NSwicHJvcG9ydGlvbnMiOjAuNDUsImdyYXZpdHkiOiJjZW50ZXIifX0.JlpYeslGuPFz4TgW7KxD22Ey4HZ_sbp3XC50zNgtDx4"
+    ],
+    "code": "VGT001",
+    "price": 8.99,
+    "stock": 10,
+    "status": true,
+    "category": "Sushi"
+  },
+  {
+    "title": "Sushi de pepino",
+    "description": "Delicioso sushi de pepino fresco",
+    "thumbnail": [
+      "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/53f59ee3-60ce-4d32-8885-c6f05457259c/dfobz3r-64203524-351d-44a7-8ba8-c040aa9d79dc.png/v1/fill/w_600,h_600/sushi_png_transparent_background__113__by_anavringold_dfobz3r-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzUzZjU5ZWUzLTYwY2UtNGQzMi04ODg1LWM2ZjA1NDU3MjU5Y1wvZGZvYnozci02NDIwMzUyNC0zNTFkLTQ0YTctOGJhOC1jMDQwYWE5ZDc5ZGMucG5nIiwiaGVpZ2h0IjoiPD02MDAiLCJ3aWR0aCI6Ijw9NjAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLndhdGVybWFyayJdLCJ3bWsiOnsicGF0aCI6Ilwvd21cLzUzZjU5ZWUzLTYwY2UtNGQzMi04ODg1LWM2ZjA1NDU3MjU5Y1wvYW5hdnJpbmdvbGQtNC5wbmciLCJvcGFjaXR5Ijo5NSwicHJvcG9ydGlvbnMiOjAuNDUsImdyYXZpdHkiOiJjZW50ZXIifX0.JlpYeslGuPFz4TgW7KxD22Ey4HZ_sbp3XC50zNgtDx4"
+    ],
+    "code": "PPN001",
+    "price": 7.99,
+    "stock": 10,
+    "status": true,
+    "category": "Sushi"
+  },
+  {
+    "title": "Sushi de aguacate",
+    "description": "Delicioso sushi de aguacate fresco",
+    "thumbnail": [
+      "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/53f59ee3-60ce-4d32-8885-c6f05457259c/dfobz3r-64203524-351d-44a7-8ba8-c040aa9d79dc.png/v1/fill/w_600,h_600/sushi_png_transparent_background__113__by_anavringold_dfobz3r-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzUzZjU5ZWUzLTYwY2UtNGQzMi04ODg1LWM2ZjA1NDU3MjU5Y1wvZGZvYnozci02NDIwMzUyNC0zNTFkLTQ0YTctOGJhOC1jMDQwYWE5ZDc5ZGMucG5nIiwiaGVpZ2h0IjoiPD02MDAiLCJ3aWR0aCI6Ijw9NjAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLndhdGVybWFyayJdLCJ3bWsiOnsicGF0aCI6Ilwvd21cLzUzZjU5ZWUzLTYwY2UtNGQzMi04ODg1LWM2ZjA1NDU3MjU5Y1wvYW5hdnJpbmdvbGQtNC5wbmciLCJvcGFjaXR5Ijo5NSwicHJvcG9ydGlvbnMiOjAuNDUsImdyYXZpdHkiOiJjZW50ZXIifX0.JlpYeslGuPFz4TgW7KxD22Ey4HZ_sbp3XC50zNgtDx4"
+    ],
+    "code": "AGV001",
+    "price": 8.99,
+    "stock": 10,
+    "status": true,
+    "category": "Sushi"
+  },
+  {
+    "title": "Sushi de queso crema",
+    "description": "Delicioso sushi de queso crema",
+    "thumbnail": [
+      "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/53f59ee3-60ce-4d32-8885-c6f05457259c/dfobz3r-64203524-351d-44a7-8ba8-c040aa9d79dc.png/v1/fill/w_600,h_600/sushi_png_transparent_background__113__by_anavringold_dfobz3r-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzUzZjU5ZWUzLTYwY2UtNGQzMi04ODg1LWM2ZjA1NDU3MjU5Y1wvZGZvYnozci02NDIwMzUyNC0zNTFkLTQ0YTctOGJhOC1jMDQwYWE5ZDc5ZGMucG5nIiwiaGVpZ2h0IjoiPD02MDAiLCJ3aWR0aCI6Ijw9NjAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLndhdGVybWFyayJdLCJ3bWsiOnsicGF0aCI6Ilwvd21cLzUzZjU5ZWUzLTYwY2UtNGQzMi04ODg1LWM2ZjA1NDU3MjU5Y1wvYW5hdnJpbmdvbGQtNC5wbmciLCJvcGFjaXR5Ijo5NSwicHJvcG9ydGlvbnMiOjAuNDUsImdyYXZpdHkiOiJjZW50ZXIifX0.JlpYeslGuPFz4TgW7KxD22Ey4HZ_sbp3XC50zNgtDx4"
+    ],
+    "code": "QCM001",
+    "price": 10.99,
+    "stock": 10,
+    "status": true,
+    "category": "Sushi"
+  },
+  {
+    "title": "Sushi de tempura",
+    "description": "Exquisito sushi de tempura",
+    "thumbnail": [
+      "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/53f59ee3-60ce-4d32-8885-c6f05457259c/dfobz3r-64203524-351d-44a7-8ba8-c040aa9d79dc.png/v1/fill/w_600,h_600/sushi_png_transparent_background__113__by_anavringold_dfobz3r-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzUzZjU5ZWUzLTYwY2UtNGQzMi04ODg1LWM2ZjA1NDU3MjU5Y1wvZGZvYnozci02NDIwMzUyNC0zNTFkLTQ0YTctOGJhOC1jMDQwYWE5ZDc5ZGMucG5nIiwiaGVpZ2h0IjoiPD02MDAiLCJ3aWR0aCI6Ijw9NjAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLndhdGVybWFyayJdLCJ3bWsiOnsicGF0aCI6Ilwvd21cLzUzZjU5ZWUzLTYwY2UtNGQzMi04ODg1LWM2ZjA1NDU3MjU5Y1wvYW5hdnJpbmdvbGQtNC5wbmciLCJvcGFjaXR5Ijo5NSwicHJvcG9ydGlvbnMiOjAuNDUsImdyYXZpdHkiOiJjZW50ZXIifX0.JlpYeslGuPFz4TgW7KxD22Ey4HZ_sbp3XC50zNgtDx4"
+    ],
+    "code": "TMP001",
+    "price": 11.99,
+    "stock": 10,
+    "status": true,
+    "category": "Sushi"
+  },
+  {
+    "title": "Sushi de salmón picante",
+    "description": "Delicioso sushi de salmón picante",
+    "thumbnail": [
+      "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/53f59ee3-60ce-4d32-8885-c6f05457259c/dfobz3r-64203524-351d-44a7-8ba8-c040aa9d79dc.png/v1/fill/w_600,h_600/sushi_png_transparent_background__113__by_anavringold_dfobz3r-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzUzZjU5ZWUzLTYwY2UtNGQzMi04ODg1LWM2ZjA1NDU3MjU5Y1wvZGZvYnozci02NDIwMzUyNC0zNTFkLTQ0YTctOGJhOC1jMDQwYWE5ZDc5ZGMucG5nIiwiaGVpZ2h0IjoiPD02MDAiLCJ3aWR0aCI6Ijw9NjAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLndhdGVybWFyayJdLCJ3bWsiOnsicGF0aCI6Ilwvd21cLzUzZjU5ZWUzLTYwY2UtNGQzMi04ODg1LWM2ZjA1NDU3MjU5Y1wvYW5hdnJpbmdvbGQtNC5wbmciLCJvcGFjaXR5Ijo5NSwicHJvcG9ydGlvbnMiOjAuNDUsImdyYXZpdHkiOiJjZW50ZXIifX0.JlpYeslGuPFz4TgW7KxD22Ey4HZ_sbp3XC50zNgtDx4"
+    ],
+    "code": "SAP001",
+    "price": 12.99,
+    "stock": 10,
+    "status": true,
+    "category": "Sushi"
+  },
+  {
+    "title": "Sushi de atún picante",
+    "description": "Exquisito sushi de atún picante",
+    "thumbnail": [
+      "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/53f59ee3-60ce-4d32-8885-c6f05457259c/dfobz3r-64203524-351d-44a7-8ba8-c040aa9d79dc.png/v1/fill/w_600,h_600/sushi_png_transparent_background__113__by_anavringold_dfobz3r-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzUzZjU5ZWUzLTYwY2UtNGQzMi04ODg1LWM2ZjA1NDU3MjU5Y1wvZGZvYnozci02NDIwMzUyNC0zNTFkLTQ0YTctOGJhOC1jMDQwYWE5ZDc5ZGMucG5nIiwiaGVpZ2h0IjoiPD02MDAiLCJ3aWR0aCI6Ijw9NjAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLndhdGVybWFyayJdLCJ3bWsiOnsicGF0aCI6Ilwvd21cLzUzZjU5ZWUzLTYwY2UtNGQzMi04ODg1LWM2ZjA1NDU3MjU5Y1wvYW5hdnJpbmdvbGQtNC5wbmciLCJvcGFjaXR5Ijo5NSwicHJvcG9ydGlvbnMiOjAuNDUsImdyYXZpdHkiOiJjZW50ZXIifX0.JlpYeslGuPFz4TgW7KxD22Ey4HZ_sbp3XC50zNgtDx4"
+    ],
+    "code": "ATP001",
+    "price": 13.99,
+    "stock": 10,
+    "status": true,
+    "category": "Sushi"
+  },
+  {
+    "title": "Sushi de langostino picante",
+    "description": "Delicioso sushi de langostino picante",
+    "thumbnail": [
+      "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/53f59ee3-60ce-4d32-8885-c6f05457259c/dfobz3r-64203524-351d-44a7-8ba8-c040aa9d79dc.png/v1/fill/w_600,h_600/sushi_png_transparent_background__113__by_anavringold_dfobz3r-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzUzZjU5ZWUzLTYwY2UtNGQzMi04ODg1LWM2ZjA1NDU3MjU5Y1wvZGZvYnozci02NDIwMzUyNC0zNTFkLTQ0YTctOGJhOC1jMDQwYWE5ZDc5ZGMucG5nIiwiaGVpZ2h0IjoiPD02MDAiLCJ3aWR0aCI6Ijw9NjAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLndhdGVybWFyayJdLCJ3bWsiOnsicGF0aCI6Ilwvd21cLzUzZjU5ZWUzLTYwY2UtNGQzMi04ODg1LWM2ZjA1NDU3MjU5Y1wvYW5hdnJpbmdvbGQtNC5wbmciLCJvcGFjaXR5Ijo5NSwicHJvcG9ydGlvbnMiOjAuNDUsImdyYXZpdHkiOiJjZW50ZXIifX0.JlpYeslGuPFz4TgW7KxD22Ey4HZ_sbp3XC50zNgtDx4"
+    ],
+    "code": "LNP001",
+    "price": 14.99,
+    "stock": 10,
+    "status": true,
+    "category": "Sushi"
+  },
+  {
+    "title": "Sushi de pollo teriyaki",
+    "description": "Delicioso sushi de pollo teriyaki",
+    "thumbnail": [
+      "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/53f59ee3-60ce-4d32-8885-c6f05457259c/dfobz3r-64203524-351d-44a7-8ba8-c040aa9d79dc.png/v1/fill/w_600,h_600/sushi_png_transparent_background__113__by_anavringold_dfobz3r-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzUzZjU5ZWUzLTYwY2UtNGQzMi04ODg1LWM2ZjA1NDU3MjU5Y1wvZGZvYnozci02NDIwMzUyNC0zNTFkLTQ0YTctOGJhOC1jMDQwYWE5ZDc5ZGMucG5nIiwiaGVpZ2h0IjoiPD02MDAiLCJ3aWR0aCI6Ijw9NjAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLndhdGVybWFyayJdLCJ3bWsiOnsicGF0aCI6Ilwvd21cLzUzZjU5ZWUzLTYwY2UtNGQzMi04ODg1LWM2ZjA1NDU3MjU5Y1wvYW5hdnJpbmdvbGQtNC5wbmciLCJvcGFjaXR5Ijo5NSwicHJvcG9ydGlvbnMiOjAuNDUsImdyYXZpdHkiOiJjZW50ZXIifX0.JlpYeslGuPFz4TgW7KxD22Ey4HZ_sbp3XC50zNgtDx4"
+    ],
+    "code": "PTK001",
+    "price": 9.99,
+    "stock": 10,
+    "status": true,
+    "category": "Sushi"
+  },
+  {
+    "title": "Sushi de salmón agridulce",
+    "description": "Delicioso sushi de salmón agridulce",
+    "thumbnail": [
+      "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/53f59ee3-60ce-4d32-8885-c6f05457259c/dfobz3r-64203524-351d-44a7-8ba8-c040aa9d79dc.png/v1/fill/w_600,h_600/sushi_png_transparent_background__113__by_anavringold_dfobz3r-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzUzZjU5ZWUzLTYwY2UtNGQzMi04ODg1LWM2ZjA1NDU3MjU5Y1wvZGZvYnozci02NDIwMzUyNC0zNTFkLTQ0YTctOGJhOC1jMDQwYWE5ZDc5ZGMucG5nIiwiaGVpZ2h0IjoiPD02MDAiLCJ3aWR0aCI6Ijw9NjAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLndhdGVybWFyayJdLCJ3bWsiOnsicGF0aCI6Ilwvd21cLzUzZjU5ZWUzLTYwY2UtNGQzMi04ODg1LWM2ZjA1NDU3MjU5Y1wvYW5hdnJpbmdvbGQtNC5wbmciLCJvcGFjaXR5Ijo5NSwicHJvcG9ydGlvbnMiOjAuNDUsImdyYXZpdHkiOiJjZW50ZXIifX0.JlpYeslGuPFz4TgW7KxD22Ey4HZ_sbp3XC50zNgtDx4"
+    ],
+    "code": "SAG001",
+    "price": 11.99,
+    "stock": 10,
+    "status": true,
+    "category": "Sushi"
+  },
+  {
+    "title": "Sushi de camarón tempura",
+    "description": "Exquisito sushi de camarón tempura",
+    "thumbnail": [
+      "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/53f59ee3-60ce-4d32-8885-c6f05457259c/dfobz3r-64203524-351d-44a7-8ba8-c040aa9d79dc.png/v1/fill/w_600,h_600/sushi_png_transparent_background__113__by_anavringold_dfobz3r-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzUzZjU5ZWUzLTYwY2UtNGQzMi04ODg1LWM2ZjA1NDU3MjU5Y1wvZGZvYnozci02NDIwMzUyNC0zNTFkLTQ0YTctOGJhOC1jMDQwYWE5ZDc5ZGMucG5nIiwiaGVpZ2h0IjoiPD02MDAiLCJ3aWR0aCI6Ijw9NjAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLndhdGVybWFyayJdLCJ3bWsiOnsicGF0aCI6Ilwvd21cLzUzZjU5ZWUzLTYwY2UtNGQzMi04ODg1LWM2ZjA1NDU3MjU5Y1wvYW5hdnJpbmdvbGQtNC5wbmciLCJvcGFjaXR5Ijo5NSwicHJvcG9ydGlvbnMiOjAuNDUsImdyYXZpdHkiOiJjZW50ZXIifX0.JlpYeslGuPFz4TgW7KxD22Ey4HZ_sbp3XC50zNgtDx4"
+    ],
+    "code": "CMT001",
+    "price": 13.99,
+    "stock": 10,
+    "status": true,
+    "category": "Sushi"
+  }
+]

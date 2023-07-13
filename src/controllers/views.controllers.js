@@ -42,15 +42,20 @@ const getCartView = async (req, res) => {
   const carts = await cartService.getCartByIdService(cId).lean();
   for (const item of carts.products) {
     const { product, quantity } = item;
-    const price = product.price;
-    const subtotal = price * quantity;
-    item.subtotal = subtotal;
+    if (product && product.price) {
+      const price = product.price;
+      const subtotal = price * quantity;
+      item.subtotal = subtotal;
+    }
   }
+
   let total = 0;
   for (const items of carts.products) {
     const { product, quantity } = items;
-    const price = product.price;
-    total += price * quantity;
+    if (product && product.price) {
+      const price = product.price;
+      total += price * quantity;
+    }
   }
   res.render("cart", { total, carts, css: "cart" });
 };
