@@ -48,4 +48,11 @@ router.get(
   viewsControllers.getAdminView
 );
 
+router.get(
+  "/purchase",
+  passportCall("jwt"),
+  authRoles("usuario"),
+  viewsControllers.getPurchaseView
+);
+
 export default router;

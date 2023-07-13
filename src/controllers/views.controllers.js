@@ -46,8 +46,13 @@ const getCartView = async (req, res) => {
     const subtotal = price * quantity;
     item.subtotal = subtotal;
   }
-
-  res.render("cart", { carts, css: "cart" });
+  let total = 0;
+  for (const items of carts.products) {
+    const { product, quantity } = items;
+    const price = product.price;
+    total += price * quantity;
+  }
+  res.render("cart", { total, carts, css: "cart" });
 };
 
 const getCartViewById = async (req, res) => {
@@ -77,6 +82,26 @@ const getAdminView = async (req, res) => {
   res.render("admin", { css: "admin" });
 };
 
+const getPurchaseView = async (req, res) => {
+  const user = req.user;
+  console.log(user);
+  const cId = req.user.cart;
+  const carts = await cartService.getCartByIdService(cId).lean();
+  for (const item of carts.products) {
+    const { product, quantity } = item;
+    const price = product.price;
+    const subtotal = price * quantity;
+    item.subtotal = subtotal;
+  }
+  let total = 0;
+  for (const items of carts.products) {
+    const { product, quantity } = items;
+    const price = product.price;
+    total += price * quantity;
+  }
+  res.render("purchase", { user, total, carts, css: "purchase" });
+};
+
 export default {
   getView,
   getViewRealTime,
@@ -88,4 +113,5 @@ export default {
   getRestorePaswordView,
   getViewHome,
   getAdminView,
+  getPurchaseView,
 };

@@ -43,6 +43,7 @@ incrementButtons.forEach((button) => {
           title: `Cantidad modificada!`,
           icon: "success",
         });
+        window.location.replace("/cart");
       }
     } catch (error) {
       console.log("Error:", error);
@@ -85,6 +86,7 @@ decrementButtons.forEach((button) => {
             title: `Cantidad modificada!`,
             icon: "success",
           });
+          window.location.replace("/cart");
         }
       } catch (error) {
         console.log("Error:", error);
@@ -122,6 +124,7 @@ removeButtons.forEach((button) => {
           title: `Producto eliminado!`,
           icon: "success",
         });
+        window.location.replace("/cart");
       }
     } catch (error) {
       console.log("Error:", error);
