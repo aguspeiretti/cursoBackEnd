@@ -3,7 +3,6 @@ const incrementButtons = document.querySelectorAll(".increment");
 
 const pCartId = document.querySelector(".cart").dataset.cartId;
 
-console.log(pCartId);
 // Obtener todos los elementos con la clase "decrement"
 const decrementButtons = document.querySelectorAll(".decrement");
 

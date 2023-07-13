@@ -84,7 +84,6 @@ const getAdminView = async (req, res) => {
 
 const getPurchaseView = async (req, res) => {
   const user = req.user;
-  console.log(user);
   const cId = req.user.cart;
   const carts = await cartService.getCartByIdService(cId).lean();
   for (const item of carts.products) {

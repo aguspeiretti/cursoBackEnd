@@ -42,7 +42,7 @@
      <div class="separate">
         <div class="ticket"> 
             <div class="parteInfo">
-                <p>Nombre:  {{user.name}}</p>
+                <p class="userName" data-user-id={{user.email}}>Nombre:  {{user.name}} </p>
                 <p>Email:  {{user.email}}</p>
                 <p>Direccion:  calle xxx numero xxx</p>
             </div>
@@ -55,7 +55,7 @@
                   <p >{{product.title}}</p>
                 </div>
                 <div class="pq">
-                    <p >X:{{quantity}} </p>
+                    <p >X : {{quantity}} </p>
                 </div>
                 <div class="pq">
                     <p >subtotal</p>
@@ -69,13 +69,13 @@
                 
         </div>
         <div class="parteTotal">
-           <p>Total:  $ {{total}}</p>
+           <p class="montoTotal"data-total={{total}}>Total:  $ {{total}}</p>
         </div>
      </div>
     
     </div>
      <div class="total">
-       <a href="/purchase"><button >ENVIAR TICKET</button></a>
+       <button id="finalizarCompraBtn" >ENVIAR TICKET</button></a>
      </div>
   </div>
   </div>

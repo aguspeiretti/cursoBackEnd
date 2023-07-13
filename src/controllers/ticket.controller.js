@@ -18,8 +18,8 @@ const getTicketsById = async (req, res) => {
 
 const createTickets = async (req, res) => {
   try {
-    ticketService.createTicketsService();
-    res.send("ticket created");
+    const ticket = await ticketService.createTicketsService(req.body);
+    res.send({ status: "success", payload: ticket });
   } catch (error) {
     console.log(error);
     return res.status(404).send({ status: "error", error: "cart not created" });

@@ -8,8 +8,8 @@ export default class TicketService {
   getTicketsByIdService = (tid) => {
     return this.dao.getTicketsById();
   };
-  createTicketsService = () => {
-    return this.dao.createTickets();
+  createTicketsService = (ticket) => {
+    return this.dao.createTickets(ticket);
   };
   deleteTicketsService = () => {
     return this.dao.deleteTickets();

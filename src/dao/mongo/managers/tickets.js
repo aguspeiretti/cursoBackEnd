@@ -1,4 +1,5 @@
 import ticketModel from "../models/ticket.js";
+import { v4 as uuidv4 } from "uuid";
 
 export default class TicketManager {
   getTickets = async () => {
@@ -7,8 +8,9 @@ export default class TicketManager {
   getTicketsById = async (tid) => {
     return ticketModel.findById(tid);
   };
-  createTickets = async () => {
-    return ticketModel.create();
+  createTickets = async (ticket) => {
+    ticket.code = uuidv4();
+    return ticketModel.create(ticket);
   };
   deleteTickets = async (tid) => {
     try {
