@@ -1,6 +1,8 @@
 // Obtener todos los elementos con la clase "increment"
 const incrementButtons = document.querySelectorAll(".increment");
 
+const stock = document.querySelector(".stock").dataset.stock;
+
 const pCartId = document.querySelector(".cart").dataset.cartId;
 
 // Obtener todos los elementos con la clase "decrement"
@@ -17,6 +19,14 @@ incrementButtons.forEach((button) => {
     let quantity = parseInt(quantityElement.textContent);
     quantity++;
 
+    if (quantity > stock) {
+      Swal.fire({
+        title: "Error",
+        text: "No hay suficiente stock disponible",
+        icon: "error",
+      });
+      return; // Detener la ejecución si excede el stock
+    }
     quantityElement.textContent = quantity;
 
     try {
@@ -60,6 +70,14 @@ decrementButtons.forEach((button) => {
 
     if (quantity > 0) {
       quantity--;
+      if (quantity <= 0) {
+        Swal.fire({
+          title: "Error",
+          text: "La cantidad no puede ser menor o igual a cero",
+          icon: "error",
+        });
+        return; // Detener la ejecución si es menor o igual a cero
+      }
 
       quantityElement.textContent = quantity;
 

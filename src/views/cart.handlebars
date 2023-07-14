@@ -33,59 +33,63 @@
 
 <div id="cartContainer">
   <div class="principal">
-  <div class="revisar">
-    <p>Revisa tus productos para continuar con la compra!!</p>
-  </div>
-  <div id="productContainer">
-    <div class="carritoSeparado">
-      <p class="cart" data-cart-id="{{carts._id}}">Carrito : {{carts._id}}</p>
-     <div class="separate">
-       {{#each carts.products}}
-        <div id="cardCart">
-          <div>
-            <img src="{{product.thumbnail}}" alt="" />
-          </div>
-          <div>
-            <p>{{product.title}}</p>
-          </div>
-          <div>
-            <p>{{product.category}}</p>
-          </div>
-          <div>
-            <p>$ {{product.price}}</p>
-          </div>
-          <div>
-            <p>Unidades:</p>
-          </div>
-          <div>
-             <button class="decrement" data-product-id={{product._id}}>-</button>
-          <span id="quantity">{{quantity}}</span>
-          <button class="increment" data-product-id={{product._id}}>+</button>
-          </div>
-          <div>
-            <button
-            class="remove"
-            data-product-id={{product._id}}>
-            Eliminar
-          </button>
-          </div>
-          <div class="subtotal">
-            <p>Total:</p>
-            <p>{{subtotal}}</p>
-          </div>
-        </div>
-      {{/each}}
-     </div>
-     <div class="total">
-      <p>Total:$ {{total}} </p>
-       <a href="/purchase"><button >FINALIZAR COMPRA</button></a>
-     </div>
+    <div class="revisar">
+      <p>Revisa tus productos para continuar con la compra!!</p>
     </div>
-  </div>
+    <div id="productContainer">
+      <div class="carritoSeparado">
+        <p class="cart" data-cart-id="{{carts._id}}">Carrito : {{carts._id}}</p>
+        <div class="separate">
+          {{#each carts.products}}
+            <div id="cardCart">
+              <div>
+                <img src="{{product.thumbnail}}" alt="" />
+              </div>
+              <div>
+                <p>{{product.title}}</p>
+              </div>
+              <div>
+                <p class="stock" data-stock="{{product.stock}}">stock:
+                  {{product.stock}}</p>
+              </div>
+              <div>
+                <p>$ {{product.price}}</p>
+              </div>
+              <div>
+                <p>Unidades:</p>
+              </div>
+              <div>
+                <button
+                  class="decrement"
+                  data-product-id={{product._id}}
+                >-</button>
+                <span id="quantity">{{quantity}}</span>
+                <button
+                  class="increment"
+                  data-product-id={{product._id}}
+                >+</button>
+              </div>
+              <div>
+                <button class="remove" data-product-id={{product._id}}>
+                  Eliminar
+                </button>
+              </div>
+              <div class="subtotal">
+                <p>Total:</p>
+                <p>{{subtotal}}</p>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+        <div class="total">
+          <p>Total:$ {{total}} </p>
+          <a href="/purchase"><button>FINALIZAR COMPRA</button></a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="/js/contador.js"></script>
 <script src="/js/logout.js"></script>
-<script src="/js/ticket.js"></script>

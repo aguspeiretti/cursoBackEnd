@@ -18,7 +18,6 @@ export default class CartsManager {
   addProductToCart = async (pid, cid, quantity) => {
     try {
       let cart = await cartsModel.findById(cid);
-      console.log(cart);
       if (!cart) {
         throw new Error("Carrito no encontrado!!!");
       }
@@ -114,6 +113,4 @@ export default class CartsManager {
       console.log(error);
     }
   };
-
-  finalizePurchase = async () => {};
 }
