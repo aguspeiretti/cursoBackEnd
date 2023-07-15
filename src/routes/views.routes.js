@@ -10,7 +10,7 @@ const cartsManager = new CartsManager();
 
 router.get(
   "/products",
-  passportCall("jwt"),
+  passportCall("jwt", { redirect: "/login" }),
   authRoles("usuario"),
   viewsControllers.getView
 );
@@ -43,23 +43,25 @@ router.get("/restorePassword", viewsControllers.getRestorePaswordView);
 
 router.get(
   "/admin",
-  passportCall("jwt"),
+  passportCall("jwt", { redirect: "/401error" }),
   authRoles("admin"),
   viewsControllers.getAdminView
 );
 
 router.get(
   "/purchase",
-  passportCall("jwt"),
+  passportCall("jwt", { redirect: "/401error" }),
   authRoles("usuario"),
   viewsControllers.getPurchaseView
 );
 
 router.get(
   "/thanks",
-  passportCall("jwt"),
+  passportCall("jwt", { redirect: "/401error" }),
   authRoles("usuario"),
   viewsControllers.getThanksView
 );
+
+router.get("/401error", viewsControllers.get401View);
 
 export default router;
