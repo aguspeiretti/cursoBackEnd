@@ -55,6 +55,11 @@ router.get(
   viewsControllers.getPurchaseView
 );
 
-router.get("/thanks", viewsControllers.getThanksView);
+router.get(
+  "/thanks",
+  passportCall("jwt"),
+  authRoles("usuario"),
+  viewsControllers.getThanksView
+);
 
 export default router;
