@@ -55,4 +55,6 @@ router.get(
   viewsControllers.getPurchaseView
 );
 
+router.get("/thanks", viewsControllers.getThanksView);
+
 export default router;

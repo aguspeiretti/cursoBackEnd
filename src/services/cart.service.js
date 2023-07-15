@@ -26,4 +26,19 @@ export default class CartService {
   finalizePurchase = () => {
     return this.dao.finalizePurchase();
   };
+  deleteCartItems = async (cartId) => {
+    try {
+      const cart = await this.dao.getCartById(cartId);
+      if (!cart) {
+        throw new Error("Cart not found");
+      }
+
+      // Eliminar los productos del carrito
+      cart.products = [];
+
+      await cart.save();
+    } catch (error) {
+      throw new Error(error.message);
+    }
+  };
 }

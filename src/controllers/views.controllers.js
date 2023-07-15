@@ -106,6 +106,10 @@ const getPurchaseView = async (req, res) => {
   res.render("purchase", { user, total, carts, css: "purchase" });
 };
 
+const getThanksView = async (req, res) => {
+  res.render("thanks", { css: "thanks" });
+};
+
 export default {
   getView,
   getViewRealTime,
@@ -118,4 +122,5 @@ export default {
   getViewHome,
   getAdminView,
   getPurchaseView,
+  getThanksView,
 };

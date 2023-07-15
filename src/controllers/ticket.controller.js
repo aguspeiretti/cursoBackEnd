@@ -1,4 +1,4 @@
-import { ticketService } from "../services/index.js";
+import { cartService, ticketService } from "../services/index.js";
 
 const getTickets = async (req, res) => {
   const tickets = await ticketService.getTicketsService();
@@ -19,6 +19,8 @@ const getTicketsById = async (req, res) => {
 const createTickets = async (req, res) => {
   try {
     const ticket = await ticketService.createTicketsService(req.body);
+    const clear = await cartService.deleteCartItems(req.body.cart);
+
     res.send({ status: "success", payload: ticket });
   } catch (error) {
     console.log(error);
