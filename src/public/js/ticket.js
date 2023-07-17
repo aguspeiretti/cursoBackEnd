@@ -27,7 +27,7 @@ const createTicket = async () => {
     // Verifica si la petición fue exitosa
     if (response.ok) {
       const ticketData = await response.json();
-      console.log(ticketData.payload);
+
       // Muestra una notificación de éxito con el ID del ticket creado
       Swal.fire({
         icon: "success",

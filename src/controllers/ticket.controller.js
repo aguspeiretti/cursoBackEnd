@@ -19,6 +19,7 @@ const getTicketsById = async (req, res) => {
 const createTickets = async (req, res) => {
   try {
     const ticket = await ticketService.createTicketsService(req.body);
+    await cartService.updateProductStockService(req.body.cart);
     const clear = await cartService.deleteCartItems(req.body.cart);
 
     res.send({ status: "success", payload: ticket });

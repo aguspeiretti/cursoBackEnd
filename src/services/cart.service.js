@@ -26,6 +26,7 @@ export default class CartService {
   finalizePurchase = () => {
     return this.dao.finalizePurchase();
   };
+
   deleteCartItems = async (cartId) => {
     try {
       const cart = await this.dao.getCartById(cartId);
@@ -40,5 +41,8 @@ export default class CartService {
     } catch (error) {
       throw new Error(error.message);
     }
+  };
+  updateProductStockService = (cid) => {
+    return this.dao.updateProductStock(cid);
   };
 }

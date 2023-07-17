@@ -11,10 +11,8 @@ const decrementButtons = document.querySelectorAll(".decrement");
 // Agregar event listener a los botones de incremento
 incrementButtons.forEach((button) => {
   button.addEventListener("click", async () => {
-    console.log(button);
     const productId = button.dataset.productId;
 
-    console.log(productId);
     const quantityElement = button.parentElement.querySelector("#quantity");
     let quantity = parseInt(quantityElement.textContent);
     quantity++;

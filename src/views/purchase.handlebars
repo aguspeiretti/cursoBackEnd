@@ -46,7 +46,7 @@
                 <p>Email:  {{user.email}}</p>
                 <p>Direccion:  calle xxx numero xxx</p>
             </div>
-            <div class="parteProductos">
+            <div class="parteProductos" data-products={{carts.products}}>
             <div class="parteProductosContenido">
                 <p class="tituloPedido">Pedido:</p>
             {{#each carts.products}}

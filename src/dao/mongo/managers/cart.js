@@ -89,7 +89,7 @@ export default class CartsManager {
   updateProductInCart = async (cid, pid, newQuantity) => {
     try {
       const cartToUpdate = await cartsModel.findById(cid);
-      console.log(cartToUpdate);
+
       if (!cartToUpdate) {
         throw new Error("Carrito no encontrado");
       }
@@ -101,7 +101,7 @@ export default class CartsManager {
       }
 
       const product = cartToUpdate.products[existingProductIndex].product;
-      console.log(product);
+
       cartToUpdate.products[existingProductIndex] = {
         product: product,
         quantity: newQuantity,
@@ -111,6 +111,27 @@ export default class CartsManager {
       return updatedCart;
     } catch (error) {
       console.log(error);
+    }
+  };
+  updateProductStock = async (cid) => {
+    try {
+      const cartToUpdate = await cartsModel.findById(cid);
+      for (const { product, quantity } of cartToUpdate.products) {
+        console.log(product, quantity);
+        const productSelected = await productModel.findById(product);
+        if (!productSelected) {
+          throw new Error(`Product not found with ID: ${product}`);
+        }
+
+        if (product.stock < quantity) {
+          throw new Error(`Insufficient stock for product with ID: ${product}`);
+        }
+
+        product.stock -= quantity;
+        await product.save();
+      }
+    } catch (error) {
+      throw new Error(error.message);
     }
   };
 }
