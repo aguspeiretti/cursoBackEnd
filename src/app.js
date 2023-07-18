@@ -5,6 +5,7 @@ import TicketRouter from "./routes/tickets.mongo.router.js";
 import sessionRouter from "./routes/session.router.js";
 import __dirname from "./utils.js";
 import viewsRouter from "./routes/views.routes.js";
+import mockingRouter from "./routes/mocking.router.js";
 import handlebars from "express-handlebars";
 import { Server } from "socket.io";
 import ProductsManager from "./dao/mongo/managers/productManager.js";
@@ -42,6 +43,7 @@ app.use("/api/products", ProductsRouter);
 app.use("/api/carts", CartsRouter);
 app.use("/api/tickets", TicketRouter);
 app.use("/api/sessions", sessionRouter);
+app.use("/api/mockingproducts", mockingRouter);
 app.use("/", viewsRouter);
 
 io.on("connection", async (socket) => {

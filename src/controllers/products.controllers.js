@@ -1,6 +1,7 @@
 import { cartService, productService } from "../services/index.js";
 import productModel from "../dao/mongo/models/products.js";
 import { pid } from "process";
+import { generateProducts } from "../mocks/products.mocks.js";
 
 const getProducts = async (req, res) => {
   const { page = 1 } = req.query;
