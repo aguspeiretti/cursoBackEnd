@@ -4,8 +4,6 @@ const collection = "tickets";
 
 const schema = new mongoose.Schema(
   {
-    id: String,
-    code: String,
     code: String,
     amount: Number,
     purchaser: String,

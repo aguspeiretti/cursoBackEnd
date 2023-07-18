@@ -76,7 +76,6 @@ const cartPut = async (req, res) => {
       pid,
       quantity
     );
-    console.log(cid, pid, quantity);
 
     res.send({ status: "success", payload: updatedCart });
   } catch (err) {
