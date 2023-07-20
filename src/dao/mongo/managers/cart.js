@@ -117,7 +117,6 @@ export default class CartsManager {
     try {
       const cartToUpdate = await cartsModel.findById(cid);
       for (const { product, quantity } of cartToUpdate.products) {
-        console.log(product, quantity);
         const productSelected = await productModel.findById(product);
         if (!productSelected) {
           throw new Error(`Product not found with ID: ${product}`);

@@ -17,6 +17,7 @@ import cookieParser from "cookie-parser";
 import config from "./config/config.js";
 import nodemailer from "nodemailer";
 import twilio from "twilio";
+import errorHandler from "./middlewares/error.js";
 
 const app = express();
 const url = config.mongoUrl;
@@ -45,6 +46,7 @@ app.use("/api/tickets", TicketRouter);
 app.use("/api/sessions", sessionRouter);
 app.use("/api/mockingproducts", mockingRouter);
 app.use("/", viewsRouter);
+app.use(errorHandler);
 
 io.on("connection", async (socket) => {
   console.log("nuevo cliente conectado");
