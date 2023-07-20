@@ -16,7 +16,7 @@ const getView = async (req, res) => {
     await productModel.paginate({}, options);
 
   const products = docs;
-
+  console.log(req.user);
   res.render("products", {
     user: req.user,
     products,
