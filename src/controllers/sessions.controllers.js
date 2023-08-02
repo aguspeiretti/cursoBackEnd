@@ -21,6 +21,10 @@ const loginPost = async (req, res) => {
     role: req.user.role,
     cart: req.user.cart,
   };
+  if (req.error) {
+    res.send({ status: "error", error: req.error });
+    req.logger.error(`logger login.Usuario no agregado: ${req.error}`);
+  }
   const accessToken = generateToken(user);
   res.cookie("authToken", accessToken, {
     maxAge: 1000 * 60 * 60 * 24,

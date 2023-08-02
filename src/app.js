@@ -18,8 +18,12 @@ import config from "./config/config.js";
 import nodemailer from "nodemailer";
 import twilio from "twilio";
 import errorHandler from "./middlewares/error.js";
+import attachLogger from "./middlewares/logger.js";
+import loggerRouter from "./routes/logger.router.js";
 
 const app = express();
+
+app.use(attachLogger);
 const url = config.mongoUrl;
 const connection = mongoose.connect(url);
 app.use(express.json());
@@ -40,6 +44,7 @@ const PORT = config.port || 8080;
 const server = app.listen(PORT, () => console.log("escuchando"));
 const io = new Server(server);
 
+app.use("/", loggerRouter);
 app.use("/api/products", ProductsRouter);
 app.use("/api/carts", CartsRouter);
 app.use("/api/tickets", TicketRouter);

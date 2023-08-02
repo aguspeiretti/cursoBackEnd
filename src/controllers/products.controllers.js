@@ -60,6 +60,7 @@ const postProduct = async (req, res) => {
       code: EErrors.INCOMPLETE_VALUES,
       status: 400,
     });
+    req.logger.error(`Product Creator error`);
     return res
       .status(400)
       .send({ status: "error", error: "Incomplete Values" });

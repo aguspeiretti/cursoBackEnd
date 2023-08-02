@@ -2,6 +2,7 @@
   "dependencies": {
     "@faker-js/faker": "^8.0.2",
     "bcrypt": "^5.1.0",
+    "commander": "^11.0.0",
     "connect-mongo": "^5.0.0",
     "cookie-parser": "^1.4.6",
     "dotenv": "^16.3.1",
@@ -18,7 +19,8 @@
     "passport-local": "^1.0.0",
     "socket.io": "^4.6.2",
     "twilio": "^4.13.0",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "winston": "^3.10.0"
   },
   "name": "primeraentregaproyectofinal",
   "version": "1.0.0",
