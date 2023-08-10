@@ -57,14 +57,14 @@ router.get(
 router.get(
   "/purchase",
   passportCall("jwt", { redirect: "/401error" }),
-  authRoles("usuario"),
+  authRoles(["usuario", "premium", "admin"]),
   viewsControllers.getPurchaseView
 );
 
 router.get(
   "/thanks",
   passportCall("jwt", { redirect: "/401error" }),
-  authRoles("usuario"),
+  authRoles(["usuario", "premium", "admin"]),
   viewsControllers.getThanksView
 );
 

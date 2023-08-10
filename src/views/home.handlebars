@@ -9,11 +9,14 @@
       <div class="enlaces">
         <ul>
           <a href="/products"><li>PRODUCTOS</li></a>
-          <li>MANAGER</li>
-          <a
-            href="https://www.instagram.com/agupeiretti/?hl=es"
-            target="_blank"
-          ><li>HASTE PREMIUM</li></a>
+          {{#if user.role}}
+            <li>MANAGER</li>
+            <a
+              href="https://www.instagram.com/agupeiretti/?hl=es"
+              target="_blank"
+            ><li>HASTE PREMIUM</li></a>
+          {{/if}}
+
         </ul>
       </div>
       <div>

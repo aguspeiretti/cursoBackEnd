@@ -30,7 +30,7 @@ const getView = async (req, res) => {
 };
 
 const getViewHome = async (req, res) => {
-  res.render("home", { css: "home" });
+  res.render("home", { user: req.user, css: "home" });
 };
 
 const getViewRealTime = async (req, res) => {
@@ -84,10 +84,10 @@ const getRestorePaswordView = async (req, res) => {
 };
 
 const getAdminView = async (req, res) => {
-  res.render("admin", { css: "admin" });
+  res.render("admin", { user: req.user, css: "admin" });
 };
 const getPremiumView = async (req, res) => {
-  res.render("premium", { css: "admin" });
+  res.render("premium", { user: req.user, css: "admin" });
 };
 
 const getPurchaseView = async (req, res) => {

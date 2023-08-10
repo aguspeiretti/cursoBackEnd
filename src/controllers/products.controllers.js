@@ -35,25 +35,16 @@ const postProduct = async (req, res) => {
   const {
     title,
     description,
-    thumbnail,
+    thumbnail = [],
     code,
     price,
-    status,
+    status = true,
     category,
     stock,
     owner,
   } = req.body;
 
-  if (
-    !title ||
-    !description ||
-    !thumbnail ||
-    !code ||
-    !price ||
-    !status ||
-    !stock ||
-    !category
-  ) {
+  if (!title || !description || !code || !price || !stock || !category) {
     ErrorService.createError({
       name: "Product Creator error",
       cause: productErrorIncompleteValues({ title, description, code }),
@@ -83,7 +74,7 @@ const postProduct = async (req, res) => {
   const products = await productService.getProductsService();
   req.io.emit("updateProducts", products);
 
-  res.sendStatus(201);
+  res.send({ status: "success" });
 };
 
 const getProductsById = async (req, res) => {

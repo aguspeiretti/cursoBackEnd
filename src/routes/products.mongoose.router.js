@@ -19,7 +19,7 @@ router.post(
 router.post(
   "/addProduct",
   passportCall("jwt"),
-  authRoles(["usuario"]),
+  authRoles(["usuario", "premium", "admin"]),
   productsControllers.addProduct
 );
 
