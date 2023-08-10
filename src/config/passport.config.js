@@ -20,7 +20,7 @@ const initializePassportStrategies = () => {
       { passReqToCallback: true, usernameField: "email" },
       async (req, email, password, done) => {
         try {
-          const { first_name, last_name } = req.body;
+          const { first_name, last_name, role } = req.body;
           //Número 1! Corrobora si el usuario ya existe.
           const exists = await userManager.getUsersBy({ email });
           //done lo que quiere hacer es DEVOLVERTE un usuario en req.user;
@@ -36,6 +36,7 @@ const initializePassportStrategies = () => {
             email,
             password: hashedPassword,
             cart: cart._id,
+            role,
           };
           const result = await userManager.createUsers(user);
           // Si todo salió bien, Ahí es cuando done debe finalizar bien.

@@ -11,7 +11,11 @@ const schema = new mongoose.Schema(
       unique: true,
     },
     password: String,
-    role: { type: String, default: "usuario" },
+    role: {
+      type: String,
+      default: "usuario",
+      enum: ["usuario", "premium", "admin"],
+    },
     cart: {
       type: mongoose.SchemaTypes.ObjectId,
       ref: "Carts",

@@ -41,6 +41,7 @@ const postProduct = async (req, res) => {
     status,
     category,
     stock,
+    owner,
   } = req.body;
 
   if (
@@ -75,8 +76,9 @@ const postProduct = async (req, res) => {
     stock,
     status,
     category,
+    owner: req.user.role == "admin" ? "admin" : req.user.email,
   };
-
+  console.log(product);
   const result = await productService.createProductService(product);
   const products = await productService.getProductsService();
   req.io.emit("updateProducts", products);

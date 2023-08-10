@@ -9,12 +9,17 @@ export default router;
 
 router.get("/", productsControllers.getProducts);
 
-router.post("/", productsControllers.postProduct);
+router.post(
+  "/",
+  passportCall("jwt"),
+  authRoles(["admin", "premium"]),
+  productsControllers.postProduct
+);
 
 router.post(
   "/addProduct",
   passportCall("jwt"),
-  authRoles("usuario"),
+  authRoles(["usuario"]),
   productsControllers.addProduct
 );
 
