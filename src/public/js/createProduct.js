@@ -1,4 +1,5 @@
 const form = document.getElementById("productForm");
+const botonEliminar = document.getElementsByClassName("bottonEliminar");
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -24,4 +25,35 @@ form.addEventListener("submit", async (event) => {
       icon: "success",
     });
   }
+});
+
+// Obtener todos los elementos con la clase "remove"
+const removeButtons = document.querySelectorAll(".bottonEliminar");
+
+// Agregar event listener a los botones de eliminar
+removeButtons.forEach((button) => {
+  button.addEventListener("click", async () => {
+    const productId = button.dataset.productId;
+
+    try {
+      const response = await fetch(`/api/products/${productId}`, {
+        method: "DELETE",
+      });
+
+      const result = await response.json();
+
+      if (result.status === "success") {
+        Swal.fire({
+          toast: true,
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 1000,
+          title: `Producto eliminado!`,
+          icon: "success",
+        });
+      }
+    } catch (error) {
+      console.log("Error:", error);
+    }
+  });
 });

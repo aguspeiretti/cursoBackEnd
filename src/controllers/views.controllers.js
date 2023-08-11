@@ -1,5 +1,5 @@
 import productModel from "../dao/mongo/models/products.js";
-import { cartService } from "../services/index.js";
+import { cartService, productService } from "../services/index.js";
 
 const getView = async (req, res) => {
   const { page = 1 } = req.query;
@@ -86,8 +86,18 @@ const getRestorePaswordView = async (req, res) => {
 const getAdminView = async (req, res) => {
   res.render("admin", { user: req.user, css: "admin" });
 };
-const getPremiumView = async (req, res) => {
-  res.render("premium", { user: req.user, css: "admin" });
+
+const getManagerView = async (req, res) => {
+  const products = await productService.getProductsService();
+  if (req.user.role == "admin") {
+    const myProducts = products;
+    res.render("manager", { myProducts, css: "admin" });
+  } else {
+    const myProducts = products.filter(
+      (product) => product.owner == req.user.email
+    );
+    res.render("manager", { myProducts, css: "admin" });
+  }
 };
 
 const getPurchaseView = async (req, res) => {
@@ -129,6 +139,7 @@ export default {
   getAdminView,
   getPurchaseView,
   getThanksView,
-  getPremiumView,
+
   get401View,
+  getManagerView,
 };

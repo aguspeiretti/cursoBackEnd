@@ -99,10 +99,13 @@ const deleteProduct = async (req, res) => {
   const { pid } = req.params;
 
   await productService.deleteProductService(pid);
+
   const products = await productService.getProductsService();
   req.io.emit("updateProducts", products);
 
-  res.sendStatus(410);
+  res.send({
+    status: "success",
+  });
 };
 
 const addProduct = async (req, res) => {

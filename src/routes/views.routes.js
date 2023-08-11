@@ -48,10 +48,10 @@ router.get(
   viewsControllers.getAdminView
 );
 router.get(
-  "/premium",
+  "/manager",
   passportCall("jwt", { redirect: "/401error" }),
   authRoles(["premium", "admin"]),
-  viewsControllers.getPremiumView
+  viewsControllers.getManagerView
 );
 
 router.get(

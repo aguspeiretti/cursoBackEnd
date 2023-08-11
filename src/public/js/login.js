@@ -26,9 +26,9 @@ form.addEventListener("submit", async (event) => {
       icon: "success",
     });
     if (responseData.payload.role === "admin") {
-      window.location.replace("/admin");
+      window.location.replace("/manager");
     } else if (responseData.payload.role === "premium") {
-      window.location.replace("/premium");
+      window.location.replace("/manager");
     } else {
       window.location.replace("/");
     }

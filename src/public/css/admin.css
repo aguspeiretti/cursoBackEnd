@@ -135,10 +135,24 @@ body {
   width: 50%;
   height: 100%;
   border: 1px solid #e7832b;
+  color: white;
+  overflow-y: scroll;
 }
 .visualizadorDeProductos h2 {
   color: white;
   margin-top: 50px;
+  margin-bottom: 50px;
+}
+.cadaProducto {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+.cadaProducto button {
+  margin: 0;
+  padding: 0;
 }
 form {
   display: flex;
