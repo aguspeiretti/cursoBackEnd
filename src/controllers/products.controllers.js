@@ -113,6 +113,8 @@ const addProduct = async (req, res) => {
     const pId = req.body.productId;
     const cId = req.user.cart;
     const result = await cartService.addProductToCartService(pId, cId);
+    const comprador = req.user.role;
+    console.log(comprador);
     res.send({
       status: "success",
       message: `llego el id del producto ${pId} `,
