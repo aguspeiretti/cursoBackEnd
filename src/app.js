@@ -20,6 +20,7 @@ import twilio from "twilio";
 import errorHandler from "./middlewares/error.js";
 import attachLogger from "./middlewares/logger.js";
 import loggerRouter from "./routes/logger.router.js";
+import usersRouter from "./routes/users.mongo.router.js";
 
 const app = express();
 
@@ -49,6 +50,7 @@ app.use("/api/products", ProductsRouter);
 app.use("/api/carts", CartsRouter);
 app.use("/api/tickets", TicketRouter);
 app.use("/api/sessions", sessionRouter);
+app.use("/api/users", usersRouter);
 app.use("/api/mockingproducts", mockingRouter);
 app.use("/", viewsRouter);
 app.use(errorHandler);

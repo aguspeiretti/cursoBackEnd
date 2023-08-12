@@ -9,8 +9,12 @@
       <div class="enlaces">
         <ul>
           <a href="/products"><li>PRODUCTOS</li></a>
+
           <a href="/manager"><li>MANAGER</li></a>
-         <a  href="/premium"><li>HASTE PREMIUM</li></a>
+          <a
+            href="/premium"
+          ><li>HASTE PREMIUM</li></a>
+
         </ul>
       </div>
       <div>
@@ -27,9 +31,17 @@
 
   </ul>
 </nav>
-<div class="thanks">
-  <p class="saludo">GRACIAS POR TU COMPRA!! :)</p>
-  <p class="saludo">NUESTRO EQUIPO SE PONDRA EN CONTACTO A LA BREVEDAD</p>
-</div>
+<div class="premiumContainer">
+
+  <h1>Haste premium</h1>
+  <div class="premiumDiv">
+
+      <button onclick="premiumHandler('premium')">perfil vendedor</button>
+
+      <button onclick="premiumHandler('usuario')">perfil usuario</button>
+
+  </div>
 
 <script src="/js/logout.js"></script>
+<script src="/js/premiumHandler.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

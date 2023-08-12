@@ -122,6 +122,11 @@ const getPurchaseView = async (req, res) => {
 const getThanksView = async (req, res) => {
   res.render("thanks", { css: "thanks" });
 };
+
+const getPremiumView = async (req, res) => {
+  const user = req.user;
+  res.render("hastePremium", { user, css: "hastePremium" });
+};
 const get401View = async (req, res) => {
   res.render("401error", { css: "401error" });
 };
@@ -139,7 +144,7 @@ export default {
   getAdminView,
   getPurchaseView,
   getThanksView,
-
+  getPremiumView,
   get401View,
   getManagerView,
 };

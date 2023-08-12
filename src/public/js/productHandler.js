@@ -25,6 +25,15 @@ Array.from(addToCartButtons).forEach((button) => {
             title: `Producto agregado!`,
             icon: "success",
           });
+        } else {
+          Swal.fire({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 2000,
+            title: `no puedes agregar tus propios productos`,
+            icon: "error",
+          });
         }
       })
       .catch((error) => {

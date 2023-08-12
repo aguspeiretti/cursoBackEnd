@@ -68,6 +68,13 @@ router.get(
   viewsControllers.getThanksView
 );
 
+router.get(
+  "/Premium",
+  passportCall("jwt", { redirect: "/401error" }),
+  authRoles(["usuario", "premium", "admin"]),
+  viewsControllers.getPremiumView
+);
+
 router.get("/401error", viewsControllers.get401View);
 
 export default router;
