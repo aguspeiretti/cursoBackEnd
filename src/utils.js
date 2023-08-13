@@ -3,6 +3,8 @@ import bcrypt from "bcrypt";
 import { dirname } from "path";
 import jwt from "jsonwebtoken";
 import passport from "passport";
+import fs from "fs";
+import Handlebars from "handlebars";
 
 export const generateToken = (user) => {
   const token = jwt.sign(user, "jwtSecret", { expiresIn: "24h" });
@@ -45,5 +47,15 @@ export const validatePassword = (password, hashedPassword) =>
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+
+export const generateMailTemplate = async (template, payload) => {
+  const content = await fs.promises.readFile(
+    `${__dirname}/templates/${template}.handlebars`,
+    "utf-8"
+  );
+  const precompiledContent = Handlebars.compile(content);
+  const compileContent = precompiledContent({ ...payload });
+  return compileContent;
+};
 
 export default __dirname;

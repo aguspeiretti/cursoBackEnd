@@ -14,6 +14,8 @@ router.get("/registerFail", sessionControllers.getRegisterFail);
 
 router.post("/login", passportCall("login"), sessionControllers.loginPost);
 
+router.post("/restoreRequest", sessionControllers.restoreRequest);
+
 router.post("/logout", sessionControllers.logOutPost);
 
 router.get("/github", passportCall("github"), (req, res) => {});
@@ -24,5 +26,7 @@ router.get(
   sessionControllers.githubCallback
 );
 
-router.post("/restorePassword", sessionControllers.restorePaswordPost);
+router.post("/restoreRequest", sessionControllers.restoreRequest);
+router.post("/restorePassword", sessionControllers.restorePassword);
+
 export default router;

@@ -1,10 +1,16 @@
-const form = document.getElementById("restoreForm");
+const form = document.getElementById("restorePasswordForm");
+
+const urlParams = new Proxy(new URLSearchParams(window.location.search), {
+  get: (serchParams, prop) => serchParams.get(prop),
+});
+console.log(urlParams.token);
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
   const data = new FormData(form);
   const obj = {};
   data.forEach((value, key) => (obj[key] = value));
+  obj.token = urlParams.token;
   const response = await fetch("/api/sessions/restorePassword", {
     method: "POST",
     body: JSON.stringify(obj),
@@ -23,7 +29,6 @@ form.addEventListener("submit", async (event) => {
       title: `Cambiaste tu pass!`,
       icon: "success",
     });
-    window.location.replace("/");
   } else {
     Swal.fire({
       toast: true,

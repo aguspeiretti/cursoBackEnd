@@ -1,8 +1,19 @@
 import { createHash, generateToken, validatePassword } from "../utils.js";
 import { userService } from "../services/index.js";
+import restoreTokenDTO from "../dtos/user/restoreTokenDTO.js";
+import mailService from "../services/mailingService.js";
+import DTemplates from "../constants/DTemplates.js";
+import jwt, { verify } from "jsonwebtoken";
 
 const registerPost = async (req, res) => {
+  const mailingService = new mailService();
   try {
+    const result = await mailingService.sendMail(
+      req.user.email,
+      DTemplates.HOLA,
+      { user: req.user }
+    );
+    console.log(result);
     res.send({ status: "success", messages: "registered" });
   } catch (error) {
     console.log(error);
@@ -54,6 +65,22 @@ const githubCallback = (req, res) => {
   res.redirect("/");
 };
 
+const restoreRequest = async (req, res) => {
+  const { email } = req.body;
+  if (!email) return res.status(400).send({ status: "error" });
+
+  const user = await userService.getUsersByService({ email });
+  if (!user) return res.status(400).send({ status: "error" });
+
+  //creamos el restore toquen
+  const restoreToken = generateToken(restoreTokenDTO.getForm(user));
+  const mailingService = new mailService();
+  const result = await mailingService.sendMail(user.email, DTemplates.RESTORE, {
+    restoreToken,
+  });
+  res.send({ status: "success" });
+};
+
 const restorePaswordPost = async (req, res) => {
   const { email, password } = req.body;
 
@@ -83,6 +110,28 @@ const restorePaswordPost = async (req, res) => {
   return res.send({ status: "success", messages: "reestablecida" });
 };
 
+const restorePassword = async (req, res) => {
+  const { password, token } = req.body;
+  try {
+    const tokenUser = jwt.verify(token);
+    const user = await userService.getUsersByService({
+      email: tokenUser.email,
+    });
+    //verificar si la clave no es la misma
+    const isSamePassword = validatePassword(password, user.password);
+    if (isSamePassword) return res.status(400);
+    const newHassedPassword = await createHash(password);
+    await userService.updateOneService(
+      { email },
+      { $set: { password: newHassedPassword } }
+    );
+    res.send({ status: "success" });
+  } catch (error) {
+    console.log(error);
+  }
+  res.send({ status: "success" });
+};
+
 export default {
   registerPost,
   getRegisterFail,
@@ -90,4 +139,6 @@ export default {
   logOutPost,
   githubCallback,
   restorePaswordPost,
+  restoreRequest,
+  restorePassword,
 };

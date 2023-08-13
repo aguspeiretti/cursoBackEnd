@@ -75,6 +75,10 @@ router.get(
   viewsControllers.getPremiumView
 );
 
+router.get("/restoreRequest", viewsControllers.getRestoreRequestView);
+
+router.get("/restorePassword", viewsControllers.getRestorePasswordView);
+
 router.get("/401error", viewsControllers.get401View);
 
 export default router;

@@ -127,6 +127,15 @@ const getPremiumView = async (req, res) => {
   const user = req.user;
   res.render("hastePremium", { user, css: "hastePremium" });
 };
+
+const getRestoreRequestView = async (req, res) => {
+  res.render("restoreRequest", { css: "hastePremium" });
+};
+
+const getRestorePasswordView = async (req, res) => {
+  res.render("restorePassword", { css: "hastePremium" });
+};
+
 const get401View = async (req, res) => {
   res.render("401error", { css: "401error" });
 };
@@ -146,5 +155,7 @@ export default {
   getThanksView,
   getPremiumView,
   get401View,
+  getRestorePasswordView,
   getManagerView,
+  getRestoreRequestView,
 };
