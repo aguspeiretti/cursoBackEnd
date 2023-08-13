@@ -3,7 +3,6 @@ const form = document.getElementById("restorePasswordForm");
 const urlParams = new Proxy(new URLSearchParams(window.location.search), {
   get: (serchParams, prop) => serchParams.get(prop),
 });
-console.log(urlParams.token);
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -19,23 +18,23 @@ form.addEventListener("submit", async (event) => {
     },
   });
   const responseData = await response.json();
-
   if (responseData.status === "success") {
     Swal.fire({
       toast: true,
       position: "top-end",
       showConfirmButton: false,
-      timer: 2000,
+      timer: 3000,
       title: `Cambiaste tu pass!`,
       icon: "success",
     });
+    window.location.replace("/login");
   } else {
     Swal.fire({
       toast: true,
       position: "top-end",
       showConfirmButton: false,
       timer: 2000,
-      title: `El password es el mismo que tenias`,
+      title: `El password no puede ser igual al anterior`,
       icon: "error",
     });
   }

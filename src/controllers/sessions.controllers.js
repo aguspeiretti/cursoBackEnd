@@ -73,7 +73,7 @@ const restoreRequest = async (req, res) => {
   if (!user) return res.status(400).send({ status: "error" });
 
   //creamos el restore toquen
-  const restoreToken = generateToken(restoreTokenDTO.getForm(user));
+  const restoreToken = generateToken(restoreTokenDTO.getForm(user), 30);
   const mailingService = new mailService();
   const result = await mailingService.sendMail(user.email, DTemplates.RESTORE, {
     restoreToken,
@@ -113,23 +113,26 @@ const restorePaswordPost = async (req, res) => {
 const restorePassword = async (req, res) => {
   const { password, token } = req.body;
   try {
-    const tokenUser = jwt.verify(token);
+    const tokenUser = jwt.verify(token, "jwtSecret");
+    console.log(tokenUser);
     const user = await userService.getUsersByService({
       email: tokenUser.email,
     });
+    console.log(user);
     //verificar si la clave no es la misma
-    const isSamePassword = validatePassword(password, user.password);
-    if (isSamePassword) return res.status(400);
+    const isSamePassword = await validatePassword(password, user.password);
+    console.log(isSamePassword);
+    if (isSamePassword) return res.send({ status: 400 });
     const newHassedPassword = await createHash(password);
+    console.log(newHassedPassword);
     await userService.updateOneService(
-      { email },
+      { email: user.email },
       { $set: { password: newHassedPassword } }
     );
     res.send({ status: "success" });
   } catch (error) {
     console.log(error);
   }
-  res.send({ status: "success" });
 };
 
 export default {

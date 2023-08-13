@@ -1,3 +1,4 @@
+import jwt from "jsonwebtoken";
 import productModel from "../dao/mongo/models/products.js";
 import { cartService, productService } from "../services/index.js";
 
@@ -79,10 +80,6 @@ const getLoginView = async (req, res) => {
   res.render("login", { css: "login" });
 };
 
-const getRestorePaswordView = async (req, res) => {
-  res.render("restorePassword", { css: "login" });
-};
-
 const getAdminView = async (req, res) => {
   res.render("admin", { user: req.user, css: "admin" });
 };
@@ -133,6 +130,15 @@ const getRestoreRequestView = async (req, res) => {
 };
 
 const getRestorePasswordView = async (req, res) => {
+  const { token } = req.query;
+  console.log(token);
+  try {
+    console.log("hola");
+    const validToken = jwt.verify(token, "jwtSecret");
+    console.log(validToken);
+  } catch (error) {
+    return res.render("invalidToken");
+  }
   res.render("restorePassword", { css: "hastePremium" });
 };
 
@@ -148,7 +154,6 @@ export default {
   getChatView,
   getRegisterView,
   getLoginView,
-  getRestorePaswordView,
   getViewHome,
   getAdminView,
   getPurchaseView,

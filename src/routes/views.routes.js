@@ -39,8 +39,6 @@ router.get("/register", viewsControllers.getRegisterView);
 
 router.get("/login", viewsControllers.getLoginView);
 
-router.get("/restorePassword", viewsControllers.getRestorePaswordView);
-
 router.get(
   "/admin",
   passportCall("jwt", { redirect: "/401error" }),

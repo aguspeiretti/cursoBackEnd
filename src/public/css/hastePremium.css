@@ -74,3 +74,54 @@ a {
   color: white;
   cursor: pointer;
 }
+#restoreRequestForm {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#restoreRequestForm input {
+  height: 30px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  width: 100%;
+  text-indent: 15px;
+  margin-top: 40px;
+}
+
+#restoreRequestForm button {
+  background-color: transparent;
+  border: 2px solid #e7832b;
+  width: 100px;
+  height: 30px;
+  border-radius: 40px;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#restorePasswordForm {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#restorePasswordForm input {
+  height: 30px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  width: 100%;
+  text-indent: 15px;
+  margin-top: 40px;
+}
+
+#restorePasswordForm button {
+  background-color: transparent;
+  border: 2px solid #e7832b;
+  width: 100px;
+  height: 30px;
+  border-radius: 40px;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

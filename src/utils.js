@@ -6,8 +6,8 @@ import passport from "passport";
 import fs from "fs";
 import Handlebars from "handlebars";
 
-export const generateToken = (user) => {
-  const token = jwt.sign(user, "jwtSecret", { expiresIn: "24h" });
+export const generateToken = (user, expiresIn = "1d") => {
+  const token = jwt.sign(user, "jwtSecret", { expiresIn });
   return token;
 };
 
