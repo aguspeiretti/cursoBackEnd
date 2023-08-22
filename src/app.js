@@ -21,12 +21,27 @@ import errorHandler from "./middlewares/error.js";
 import attachLogger from "./middlewares/logger.js";
 import loggerRouter from "./routes/logger.router.js";
 import usersRouter from "./routes/users.mongo.router.js";
-
+import swaggerJSDoc from "swagger-jsdoc";
+import swaggerUiExpress from "swagger-ui-express";
 const app = express();
 
 app.use(attachLogger);
 const url = config.mongoUrl;
 const connection = mongoose.connect(url);
+
+const swaggerOptions = {
+  definition: {
+    openapi: "3.0.1",
+    info: {
+      title: "documentacion sushi app",
+      description: "Documentacion para API principal de Sushiapp",
+    },
+  },
+  apis: [`${__dirname}/docs/**/*.yaml`],
+};
+const specs = swaggerJSDoc(swaggerOptions);
+app.use("/docs", swaggerUiExpress.serve, swaggerUiExpress.setup(specs));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(`${__dirname}/public`));
@@ -89,51 +104,3 @@ io.on("connection", async (socket) => {
     socket.broadcast.emit("newUserConnected", data);
   });
 });
-
-// //esto va en el env
-// const APP_PASSWORD = "myohssdwcyqmilmu";
-// const APP_EMAIL = "agupeiretti@gmail.com";
-
-// //general el vinculo entre el servicio seleccionado y mi herramienta
-// const transport = nodemailer.createTransport({
-//   service: "gmail",
-//   port: 587,
-//   auth: {
-//     user: APP_EMAIL,
-//     pass: APP_PASSWORD,
-//   },
-// });
-
-// app.get("/email", async (req, res) => {
-//   const result = await transport.sendMail({
-//     from: "agus <agupeiretti@hotmail.com>",
-//     to: "agupeiretti@hotmail.com",
-//     subject: "correo de prueba",
-//     html: `
-//     <div><h1>!alto ahi esto es una prueba</h1></div>
-//     `,
-
-//   });
-//   res.send({ status: "success", payload: result });
-// });
-
-//TWILIO
-
-// const TWILIO_NUMBER = "+16203203268";
-// const TWILIO_ID = "ACebe07a3c15effe8d1f831965db466e6c";
-// const TWILIO_TOKEN = "2c9320d1f4294ef763ed7bc5aca9233f";
-
-// const twilioClient = twilio(TWILIO_ID,TWILIO_TOKEN)
-
-// app.get("/sms", async (req, res) => {
-//   const clientNumber = "+543518015096"
-//   const result = await twilioClient.messages.create({
-//     body:"Hola desde el back",
-//     from:TWILIO_NUMBER,
-//     to:clientNumber
-
-//   })
-//   res.send({status:"success" , payload:result})
-// });
-
-//implementar DTO

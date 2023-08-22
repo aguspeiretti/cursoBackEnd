@@ -1,0 +1,50 @@
+paths:
+  /api/products:
+    get:
+      summary: Devuelve los productos
+      tags:
+        - Products
+      responses:
+        "200":
+          description: Se obtinen los productos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#components/schemas/Products"
+        "400":
+          descriptin: Error por db
+
+components:
+  schemas:
+    Products:
+      type: object
+      properties:
+        title:
+          type: string
+          description: nombre del producto
+        description:
+          type: string
+          description: descripcion del producto
+        thumbnail:
+          type: array
+          description: imagen del producto
+        code:
+          type: string
+          description: codigo unico
+        stock:
+          type: number
+          description: stock del producto
+        price:
+          type: number
+          description: precio del producto
+        status:
+          type: boolean
+          description: activo o no activo
+        category:
+          type: string
+          description: categoria del producto
+        owner:
+          type: string
+          description: propietario del producto
