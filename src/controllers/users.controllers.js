@@ -22,8 +22,8 @@ const upDateUser = async (req, res) => {
 const updateUserData = async (req, res) => {
   try {
     const files = req.files;
-    const userId = req.params.uid;
-    const user = await userService.getUsersByService(userId);
+    const params = { _id: req.params.uid }; // Crear el objeto 'params' con el _id del usuario
+    const user = await userService.getUsersByService(params); // Usar 'getUsersByService' con 'params'
     console.log(files);
     if (!user) {
       return res.status(404).send({
@@ -32,7 +32,7 @@ const updateUserData = async (req, res) => {
       });
     }
 
-    // Obteniendo la información de los archivos cargados y agregandolos al array "documents"
+    // Obteniendo la información de los archivos cargados y agregándolos al array "documents"
     const documents = user.documents || []; // Se obtiene el array de documentos existente o se crea uno nuevo
 
     const requiredReferences = [
@@ -60,7 +60,8 @@ const updateUserData = async (req, res) => {
     }
 
     // Actualizando el usuario en la base de datos con el nuevo array "documents"
-    const updatedUser = await userService.updateUsersService(userId, {
+    const updatedUser = await userService.updateUsersService(params, {
+      // Usar 'params' en lugar de 'userId'
       documents,
       status: user.status,
     });
