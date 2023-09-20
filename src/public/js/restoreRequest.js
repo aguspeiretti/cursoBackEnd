@@ -18,6 +18,6 @@ form.addEventListener("submit", async (event) => {
   if (responseData.status === "success") {
     text.innerHTML = "se ah enviado un correo de verificacion";
   } else {
-    text.innerHTML = json.error;
+    text.innerHTML = "email no encontrado";
   }
 });

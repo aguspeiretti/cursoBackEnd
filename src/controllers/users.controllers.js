@@ -11,7 +11,7 @@ const upDateUser = async (req, res) => {
       { $set: { role: role.type } }
     );
     if (!userUpdate) {
-      res.send({ status: "success", messages: "reestablecida" });
+      res.send({ status: "success", messages: "modificado" });
     }
     res.send({ status: "success", payload: userUpdate });
   } catch (err) {
@@ -80,7 +80,38 @@ const updateUserData = async (req, res) => {
   }
 };
 
+const deleteUser = async (req, res) => {
+  const { uid } = req.params;
+
+  await userService.deleteUsersService(uid);
+
+  res.send({
+    status: "success",
+  });
+};
+
+const modifyRoleUser = async (req, res) => {
+  const { uid } = req.params;
+  const role = req.body;
+  console.log(role.selectedValue);
+  console.log(uid);
+  try {
+    const userUpdate = await userService.updateOneService(
+      { _id: uid },
+      { $set: { role: role.selectedValue } }
+    );
+    if (!userUpdate) {
+      res.send({ status: "success", messages: "modificado" });
+    }
+    res.send({ status: "success", payload: userUpdate });
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 export default {
   upDateUser,
   updateUserData,
+  deleteUser,
+  modifyRoleUser,
 };

@@ -8,4 +8,8 @@ router.put("/premium", passportCall("jwt"), usersControllers.upDateUser);
 
 router.post("/:uid/documents", uploader.any(), usersControllers.updateUserData);
 
+router.delete("/:uid/", usersControllers.deleteUser);
+
+router.put("/:uid/premium", usersControllers.modifyRoleUser);
+
 export default router;

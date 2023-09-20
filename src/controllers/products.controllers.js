@@ -5,6 +5,9 @@ import { generateProducts } from "../mocks/products.mocks.js";
 import ErrorService from "../services/ErrorService.js";
 import { productErrorIncompleteValues } from "../constants/productsErrors.js";
 import EErrors from "../constants/EErrors.js";
+import mailService from "../services/mailingService.js";
+import { log } from "console";
+import DTemplates from "../constants/DTemplates.js";
 
 const getProducts = async (req, res) => {
   const { page = 1 } = req.query;
@@ -98,14 +101,30 @@ const putProduct = async (req, res) => {
 const deleteProduct = async (req, res) => {
   const { pid } = req.params;
 
-  await productService.deleteProductService(pid);
+  try {
+    const products = await productService.getProductsByIdService({ _id: pid });
 
-  const products = await productService.getProductsService();
-  req.io.emit("updateProducts", products);
+    if (products.owner) {
+      const mailingService = new mailService();
+      const result = await mailingService.sendMail(
+        products.owner,
+        DTemplates.PRODUCTOELIMINADO,
+        { user: req.user }
+      );
+      console.log(result);
+    }
 
-  res.send({
-    status: "success",
-  });
+    await productService.deleteProductService(pid);
+
+    req.io.emit("updateProducts", products);
+
+    res.send({ status: "success", message: "Product deleted" });
+  } catch (error) {
+    console.error(error);
+    res
+      .status(500)
+      .send({ status: "error", message: "Error deleting product" });
+  }
 };
 
 const addProduct = async (req, res) => {

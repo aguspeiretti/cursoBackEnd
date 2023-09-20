@@ -14,11 +14,8 @@ export const privacy = (privacyType) => {
 };
 export const authRoles = (roles = []) => {
   return async (req, res, next) => {
-    if (!roles.includes(req.user.role))
-      return res.status(403).send({
-        status: "error",
-        error: "no tienes permiso para acceder aqui",
-      });
+    if (!roles.includes(req.user.role)) return res.redirect("/401error");
+
     next();
   };
 };

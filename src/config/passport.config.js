@@ -14,6 +14,11 @@ const cartManager = new CartsManager();
 const LocalStrategy = local.Strategy;
 
 const initializePassportStrategies = () => {
+  function isValidEmail(email) {
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    return emailRegex.test(email);
+  }
+
   passport.use(
     "register",
     new LocalStrategy(
@@ -21,6 +26,16 @@ const initializePassportStrategies = () => {
       async (req, email, password, done) => {
         try {
           const { first_name, last_name, role } = req.body;
+          if (!isValidEmail(email)) {
+            return done(null, false, { message: "Email no válido" });
+          }
+
+          // Validar la contraseña
+          if (password.length < 6) {
+            return done(null, false, {
+              message: "La contraseña debe tener al menos 6 caracteres",
+            });
+          }
           //Número 1! Corrobora si el usuario ya existe.
           const exists = await userManager.getUsersBy({ email });
           //done lo que quiere hacer es DEVOLVERTE un usuario en req.user;

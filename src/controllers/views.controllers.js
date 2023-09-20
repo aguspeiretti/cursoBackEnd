@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 import productModel from "../dao/mongo/models/products.js";
-import { cartService, productService } from "../services/index.js";
+import { cartService, productService, userService } from "../services/index.js";
 
 const getView = async (req, res) => {
   const { page = 1 } = req.query;
@@ -96,6 +96,25 @@ const getManagerView = async (req, res) => {
     res.render("manager", { myProducts, css: "admin" });
   }
 };
+const getManagerPremiumView = async (req, res) => {
+  const products = await productService.getProductsService();
+  if (req.user.role == "admin") {
+    const myProducts = products;
+    res.render("manager", { myProducts, css: "admin" });
+  } else {
+    const myProducts = products.filter(
+      (product) => product.owner == req.user.email
+    );
+    res.render("managerPremium", { myProducts, css: "admin" });
+  }
+};
+
+const getUserManagerView = async (req, res) => {
+  const users = await userService.getUsersService();
+  const myUsers = users;
+  console.log(myUsers);
+  res.render("userManager", { myUsers, css: "userManager" });
+};
 
 const getPurchaseView = async (req, res) => {
   const user = req.user;
@@ -163,4 +182,6 @@ export default {
   getRestorePasswordView,
   getManagerView,
   getRestoreRequestView,
+  getUserManagerView,
+  getManagerPremiumView,
 };

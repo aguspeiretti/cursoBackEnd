@@ -1,0 +1,63 @@
+<nav class="navBarAdmin">
+  <div class="LogoAdmin">
+    <a href="/"><img src="/img/sushilogo.png" alt="" /> </a>
+    <a href="/"> <p>SUSHIAPP</p></a>
+  </div>
+  <ul>
+    <a href="/manager"><li>Manager Productos</li></a>
+    <a href="/userManager"><li>Users Manager</li></a>
+    <a href="/"><li>Home</li></a>
+
+  </ul>
+  <div class="logoutContainer">
+    <button id="loguotButton">Logout</button>
+  </div>
+</nav>
+<div class="UserManager">
+
+  <div class="creadorDeUsuarios">
+    <div class="titulo">
+      <h2>Administrador de usuarios</h2>
+    </div>
+
+    <div class="cadaUsuario">
+      <table>
+        <tr>
+          <th>Email</th>
+          <th>Role actual</th>
+          <th>Role</th>
+          <th>Action</th>
+        </tr>
+        {{#each myUsers}}
+          <tr>
+            <td>{{this.email}}</td>
+            <td>{{this.role}}</td>
+            <td>
+              <select id="select_{{this._id}}">
+                <option value="premium">Premium</option>
+                <option value="usuario">usuario</option>
+              </select>
+            </td>
+            <td>
+              <button
+                data-user-id={{this._id}}
+                class="bottonModificarUsuario"
+              >Modificar</button>
+              <button
+                data-user-id={{this._id}}
+                class="bottonEliminarUsuario"
+              >Eliminar</button>
+            </td>
+          </tr>
+        {{/each}}
+      </table>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/js/logout.js"></script>
+<script src="/js/manejadorUsuarios.js"></script>

@@ -51,6 +51,19 @@ router.get(
   authRoles(["premium", "admin"]),
   viewsControllers.getManagerView
 );
+router.get(
+  "/managerPremium",
+  passportCall("jwt", { redirect: "/401error" }),
+  authRoles("premium"),
+  viewsControllers.getManagerPremiumView
+);
+
+router.get(
+  "/userManager",
+  passportCall("jwt", { redirect: "/401error" }),
+  authRoles("admin"),
+  viewsControllers.getUserManagerView
+);
 
 router.get(
   "/purchase",

@@ -24,5 +24,15 @@ form.addEventListener("submit", async (event) => {
       icon: "success",
     });
     window.location.replace("/login");
+  } else {
+    Swal.fire({
+      toast: false,
+      position: "center",
+      showConfirmButton: false,
+      timer: 4000,
+      title: `ERROR`,
+      text: "algo salio mal en el registro verifica que el email contenga @ y . y el password mas de 6 caracteres",
+      icon: "error",
+    });
   }
 });

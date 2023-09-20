@@ -67,10 +67,12 @@ const githubCallback = (req, res) => {
 
 const restoreRequest = async (req, res) => {
   const { email } = req.body;
-  if (!email) return res.status(400).send({ status: "error" });
+  if (!email)
+    return res.status(400).send({ status: "error usuario no encontrado" });
 
   const user = await userService.getUsersByService({ email });
-  if (!user) return res.status(400).send({ status: "error" });
+  if (!user)
+    return res.status(400).send({ status: "error usuario no encontrado " });
 
   //creamos el restore toquen
   const restoreToken = generateToken(restoreTokenDTO.getForm(user), 30);
