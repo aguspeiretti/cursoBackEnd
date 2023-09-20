@@ -1,4 +1,6 @@
+import DTemplates from "../constants/DTemplates.js";
 import { cartService, ticketService } from "../services/index.js";
+import mailService from "../services/mailingService.js";
 
 const getTickets = async (req, res) => {
   const tickets = await ticketService.getTicketsService();
@@ -19,8 +21,26 @@ const getTicketsById = async (req, res) => {
 const createTickets = async (req, res) => {
   try {
     const ticket = await ticketService.createTicketsService(req.body);
+    console.log(req.body);
     await cartService.updateProductStockService(req.body.cart);
     const clear = await cartService.deleteCartItems(req.body.cart);
+
+    const emailService = new mailService();
+    const emailResult = await emailService.sendMail(
+      req.body.purchaser,
+      DTemplates.CONFIRMACIONCOMPRA,
+      {
+        userName: req.body.purchaser,
+        montoTotal: req.body.amount,
+        ticketId: ticket._id,
+      }
+    );
+
+    if (emailResult) {
+      console.log("Correo electrónico enviado con éxito");
+    } else {
+      console.error("Error al enviar el correo electrónico");
+    }
 
     res.send({ status: "success", payload: ticket });
   } catch (error) {
