@@ -28,9 +28,12 @@
   "name": "primeraentregaproyectofinal",
   "version": "1.0.0",
   "main": "index.js",
+  "engines": {
+    "node": ">=14 <17"
+  },
   "scripts": {
     "test": "mocha test/Users/UsersDao.test.js",
-    "start": "node ./src/app.js",
+    "start": "node src/app.js",
     "dev": "nodemon ./src/app.js"
   },
   "keywords": [],
