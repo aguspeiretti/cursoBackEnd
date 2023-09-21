@@ -1,5 +1,7 @@
 const form = document.getElementById("loginForm");
 
+console.log(document.cookie);
+
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
   const data = new FormData(form);
@@ -13,6 +15,7 @@ form.addEventListener("submit", async (event) => {
     },
   });
   const responseData = await response.json();
+  console.log(responseData);
   if (responseData.status === "success") {
     Swal.fire({
       toast: true,
@@ -22,7 +25,13 @@ form.addEventListener("submit", async (event) => {
       title: `Logueado!`,
       icon: "success",
     });
-    window.location.replace("/");
+    if (responseData.payload.role === "admin") {
+      window.location.replace("/userManager");
+    } else if (responseData.payload.role === "premium") {
+      window.location.replace("/managerPremium");
+    } else {
+      window.location.replace("/");
+    }
   } else {
     Swal.fire({
       toast: true,

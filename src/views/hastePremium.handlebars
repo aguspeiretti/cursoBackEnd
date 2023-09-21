@@ -1,0 +1,47 @@
+<nav class="navBar">
+  <ul>
+    <div class="Logo">
+      <a href="/"><img src="/img/sushilogo.png" alt="" /> </a>
+      <a href="/"> <p>SUSHIAPP</p></a>
+    </div>
+
+    <div class="divsSing">
+      <div class="enlaces">
+        <ul>
+          <a href="/products"><li>PRODUCTOS</li></a>
+
+          <a href="/manager"><li>MANAGER</li></a>
+          <a
+            href="/premium"
+          ><li>HASTE PREMIUM</li></a>
+
+        </ul>
+      </div>
+      <div>
+        <a href="/cart"><li><i
+              class="fa-solid fa-cart-shopping"
+              style="color: #ffffff;"
+            ></i></li></a>
+      </div>
+      <div class="logoutContainer">
+        <button id="loguotButton">Logout</button>
+      </div>
+
+    </div>
+
+  </ul>
+</nav>
+<div class="premiumContainer">
+
+  <h1>Haste premium</h1>
+  <div class="premiumDiv">
+
+      <button onclick="premiumHandler('premium')">perfil Premium</button>
+
+      <button onclick="premiumHandler('usuario')">perfil usuario</button>
+
+  </div>
+
+<script src="/js/logout.js"></script>
+<script src="/js/premiumHandler.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

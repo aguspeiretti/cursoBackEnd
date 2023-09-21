@@ -1,8 +1,8 @@
 import productModel from "../models/products.js";
 
 export default class ProductsManager {
-  getProducts = async () => {
-    return productModel.find().lean();
+  getProducts = async (param) => {
+    return productModel.find(param).lean();
   };
 
   getProductsById = (params) => {

@@ -8,7 +8,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgb(38, 38, 38);
+  background-image: url("../img/fondosushi.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: #e7832b;
   justify-content: center;
   overflow-x: hidden;
@@ -17,6 +20,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 50px;
 }
 h1 {
   padding-top: 30px;
@@ -59,4 +63,19 @@ button {
   border-radius: 40px;
   color: white;
   margin-top: 20px;
+}
+.registrado {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+.productForm {
+  display: flex;
+  flex-direction: column;
 }

@@ -1,0 +1,189 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(38, 38, 38);
+  overflow-x: hidden;
+}
+#cartContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+#cartContainer h1 {
+  color: #e7832b;
+  margin-top: 80px;
+  margin-bottom: 60px;
+}
+.separate {
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.principal {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+}
+.revisar {
+  width: 40%;
+  height: 100%;
+  background-image: url("../img/fondosushi.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.revisar p {
+  font-size: 50px;
+  width: 40%;
+  text-align: center;
+  letter-spacing: 5px;
+  text-shadow: -3px 4px 1px rgba(0, 0, 0, 0.58);
+}
+.revisar img {
+  width: 100%;
+  height: 100%;
+}
+#productContainer {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#cardCart {
+  width: 100%;
+  height: 60px;
+  border: 3px solid #e7832b;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  color: white;
+  display: flex;
+  font-size: 20px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+#cardCart div {
+  width: 12.5%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#cardCart img {
+  width: 30px;
+}
+.carritoSeparado {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  -webkit-box-shadow: 1px 3px 19px -3px #000000;
+  box-shadow: 1px 3px 19px -3px #000000;
+  padding: 10px;
+  overflow: hidden;
+}
+.carritoSeparado p {
+  font-size: 15px;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.total {
+  display: flex;
+  justify-content: center;
+}
+
+.logoutContainer {
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.logoutContainer button {
+  background-color: transparent;
+  border: 2px solid #e7832b;
+  width: 100px;
+  height: 30px;
+  border-radius: 40px;
+  color: white;
+  cursor: pointer;
+}
+button {
+  margin-top: 10px;
+  height: 30px;
+  padding: 5px;
+  border-radius: 15px;
+  border: 2px solid #e7832b !important;
+  background-color: #1e1e1e;
+  color: white;
+  cursor: pointer;
+}
+
+.ticket {
+  width: 60%;
+  height: 90%;
+  border: 1px solid #e7832b;
+  border-radius: 15px;
+  -webkit-box-shadow: 1px 3px 19px -3px #000000;
+  box-shadow: 1px 3px 19px -3px #000000;
+  padding: 10px;
+}
+.tituloPedido {
+  margin: 0;
+  padding: 0;
+}
+.parteInfo {
+  height: 20%;
+}
+.parteProductos {
+  display: flex;
+  flex-direction: column;
+  height: 60%;
+}
+.parteProductosContenido {
+  height: 100%;
+  width: 100%;
+}
+.parteTotal {
+  display: flex;
+  justify-content: end;
+  padding: 0 40px;
+  height: 10%;
+}
+
+.productos {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 20px;
+}
+.productos div {
+  width: 25%;
+}
+.pTitle {
+  display: flex;
+  justify-content: start;
+}
+.pTitle p {
+  font-size: 15px;
+}
+.pq {
+  display: flex;
+  justify-content: center;
+}

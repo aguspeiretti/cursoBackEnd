@@ -1,0 +1,58 @@
+<nav class="navBarAdmin">
+  <div class="LogoAdmin">
+    <a href="#"><img src="/img/sushilogo.png" alt="" /> </a>
+    <a href="#"> <p>SUSHIAPP</p></a>
+  </div>
+  <ul>
+    <a href="/manager"><li>Manager Productos</li></a>
+    <a href="/userManager"><li>Users Manager</li></a>
+
+  </ul>
+  <div class="logoutContainer">
+    <button id="loguotButton">Logout</button>
+  </div>
+</nav>
+<div class="productManager">
+
+  <div class="creadorDeProductos">
+    <h2>Crear un producto</h2>
+    <form id="productForm">
+
+      <label>Title</label>
+      <input type="text" name="title" />
+
+      <label>Description</label>
+      <input type="text" name="description" />
+
+      <label>Code</label>
+      <input type="text" name="code" />
+
+      <label>Stock</label>
+      <input type="number" name="stock" />
+
+      <label>Price</label>
+      <input type="number" name="price" />
+
+      <label>Category</label>
+      <input name="category" />
+
+      <button type="submit">Create</button>
+
+    </form>
+  </div>
+  <div class="visualizadorDeProductos">
+    <h2>Mis Productos</h2>
+    {{#each myProducts}}
+      <div class="cadaProducto">
+        <p>{{title}}</p>
+        <button data-product-id={{_id}} class="bottonEliminar">Eliminar</button>
+      </div>
+
+    {{/each}}
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/js/logout.js"></script>
+<script src="/js/createProduct.js"></script>

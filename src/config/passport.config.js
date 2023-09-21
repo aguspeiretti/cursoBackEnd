@@ -1,24 +1,45 @@
 import passport from "passport";
 import local from "passport-local";
-import { createHash, validatePassword } from "../utils.js";
+import { cookieExtractor, createHash, validatePassword } from "../utils.js";
 import UserManager from "../dao/mongo/managers/users.js";
 import GithubStrategy from "passport-github2";
+import { ExtractJwt, Strategy } from "passport-jwt";
+import CartsManager from "../dao/mongo/managers/cart.js";
+import config from "./config.js";
+import UserDTO from "../dtos/user/userDTO.js";
 
 const userManager = new UserManager();
+const cartManager = new CartsManager();
 
 const LocalStrategy = local.Strategy;
 
 const initializePassportStrategies = () => {
+  function isValidEmail(email) {
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    return emailRegex.test(email);
+  }
+
   passport.use(
     "register",
     new LocalStrategy(
       { passReqToCallback: true, usernameField: "email" },
       async (req, email, password, done) => {
         try {
-          const { first_name, last_name } = req.body;
+          const { first_name, last_name, role } = req.body;
+          if (!isValidEmail(email)) {
+            return done(null, false, { message: "Email no válido" });
+          }
+
+          // Validar la contraseña
+          if (password.length < 6) {
+            return done(null, false, {
+              message: "La contraseña debe tener al menos 6 caracteres",
+            });
+          }
           //Número 1! Corrobora si el usuario ya existe.
           const exists = await userManager.getUsersBy({ email });
           //done lo que quiere hacer es DEVOLVERTE un usuario en req.user;
+          const cart = await cartManager.createCart();
           if (exists)
             return done(null, false, { message: "El usuario ya existe" });
           //Número 2! Si el usuario no existe, ahora sí ENCRIPTAMOS SU CONTRASEÑA
@@ -29,6 +50,8 @@ const initializePassportStrategies = () => {
             last_name,
             email,
             password: hashedPassword,
+            cart: cart._id,
+            role,
           };
           const result = await userManager.createUsers(user);
           // Si todo salió bien, Ahí es cuando done debe finalizar bien.
@@ -46,11 +69,11 @@ const initializePassportStrategies = () => {
       { usernameField: "email" },
       async (email, password, done) => {
         // PASSPORT SÓLO DEBE DEVOLVER AL USUARIO FINAL, ÉL NO ES RESPONSABLE DE LA SESIÓN
-        if (email === "adminCoder@coder.com" && password === "adminCod3r123") {
+        if (email === config.adminName && password === config.adminPasword) {
           //Desde aquí ya puedo inicializar al admin.
           const user = {
             id: 0,
-            name: `Admin`,
+            name: `Coder admin`,
             role: "admin",
             email: "...",
           };
@@ -70,12 +93,8 @@ const initializePassportStrategies = () => {
 
         //Número 3!!! ¿El usuario existe y SÍ PUSO SU CONTRASEÑA CORRECTA? Como estoy en passport, sólo devuelvo al usuario
 
-        user = {
-          id: user._id,
-          name: `${user.first_name} ${user.last_name}`,
-          email: user.email,
-          role: user.role,
-        };
+        user = new UserDTO(user);
+
         return done(null, user);
       }
     )
@@ -96,7 +115,7 @@ const initializePassportStrategies = () => {
           let emailGitHub = `${profile._json.login}@github.com`;
 
           const user = await userManager.getUsersBy({ email: emailGitHub });
-          console.log(user);
+
           if (!user) {
             const newUser = {
               first_name: name,
@@ -116,18 +135,17 @@ const initializePassportStrategies = () => {
     )
   );
 
-  passport.serializeUser(function (user, done) {
-    return done(null, user.email);
-  });
-  passport.deserializeUser(async function (id, done) {
-    if (id === 0) {
-      return done(null, {
-        role: "admin",
-        name: "ADMIN",
-      });
-    }
-    const user = await userManager.getUsersBy({ _id: id });
-    return done(null, user);
-  });
+  passport.use(
+    "jwt",
+    new Strategy(
+      {
+        jwtFromRequest: ExtractJwt.fromExtractors([cookieExtractor]),
+        secretOrKey: "jwtSecret",
+      },
+      async (payload, done) => {
+        return done(null, payload);
+      }
+    )
+  );
 };
 export default initializePassportStrategies;

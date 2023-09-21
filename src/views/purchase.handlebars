@@ -1,0 +1,82 @@
+<nav class="navBar">
+  <ul>
+    <div class="Logo">
+      <a href="/"><img src="/img/sushilogo.png" alt="" /> </a>
+      <a href="/"> <p>SUSHIAPP</p></a>
+    </div>
+
+    <div class="divsSing">
+      <div class="enlaces">
+        <ul>
+          <a href="/products"><li>PRODUCTOS</li></a>
+         <a href="/manager"><li>MANAGER</li></a>
+        <a  href="/premium"><li>HASTE PREMIUM</li></a>
+        </ul>
+      </div>
+      <div>
+        <a href="/cart"><li><i
+              class="fa-solid fa-cart-shopping"
+              style="color: #ffffff;"
+            ></i></li></a>
+      </div>
+      <div class="logoutContainer">
+        <button id="loguotButton">Logout</button>
+      </div>
+
+    </div>
+
+  </ul>
+</nav>
+
+<div id="cartContainer">
+  <div class="principal">
+  <div class="revisar">
+    <p>Ya casi tenes tus productos finalizemos la compra!!</p>
+  </div>
+  <div id="productContainer">
+    <div class="carritoSeparado">
+      <p class="cart" data-cart-id="{{carts._id}}">Carrito : {{carts._id}}</p>
+     <div class="separate">
+        <div class="ticket"> 
+            <div class="parteInfo">
+                <p class="userName" data-user-id={{user.email}}>Nombre:  {{user.name}} </p>
+                <p>Email:  {{user.email}}</p>
+                <p>Direccion:  calle xxx numero xxx</p>
+            </div>
+            <div class="parteProductos" data-products={{carts.products}}>
+            <div class="parteProductosContenido">
+                <p class="tituloPedido">Pedido:</p>
+            {{#each carts.products}}
+            <div class="productos">
+                <div class="pTitle">
+                  <p >{{product.title}}</p>
+                </div>
+                <div class="pq">
+                    <p >X : {{quantity}} </p>
+                </div>
+                <div class="pq">
+                    <p >subtotal</p>
+                </div>
+                <div class="pq">
+                    <p >$ {{subtotal}}</p>
+                </div>
+            </div>
+           {{/each}}
+        </div>
+                
+        </div>
+        <div class="parteTotal">
+           <p class="montoTotal"data-total={{total}}>Total:  $ {{total}}</p>
+        </div>
+     </div>
+    
+    </div>
+     <div class="total">
+       <button id="finalizarCompraBtn" >ENVIAR TICKET</button></a>
+     </div>
+  </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/js/logout.js"></script>
+<script src="/js/ticket.js"></script>

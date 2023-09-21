@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("../img/fondosushi.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #e7832b;
+  justify-content: center;
+  overflow-x: hidden;
+}
+.premiumContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+}
+h1 {
+  padding-top: 30px;
+  margin-bottom: 30px;
+}
+
+.premiumDiv {
+  width: 30vw;
+  height: 40vh;
+  border: 2px solid #e7832b;
+  border-radius: 20px;
+  -webkit-box-shadow: 1px 3px 19px -3px #000000;
+  box-shadow: 1px 3px 19px -3px #000000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.premiumDiv button {
+  background-color: #e7832b;
+  border: 2px solid #e7832b;
+  width: 200px;
+  height: 50px;
+  border-radius: 40px;
+  color: white;
+  font-size: 20px;
+  margin-top: 40px;
+  padding: 5px;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+.navBar {
+  position: absolute;
+  top: 0;
+}
+.logoutContainer {
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.logoutContainer button {
+  background-color: transparent;
+  border: 2px solid #e7832b;
+  width: 100px;
+  height: 30px;
+  border-radius: 40px;
+  color: white;
+  cursor: pointer;
+}
+#restoreRequestForm {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#restoreRequestForm input {
+  height: 30px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  width: 100%;
+  text-indent: 15px;
+  margin-top: 40px;
+}
+
+#restoreRequestForm button {
+  background-color: transparent;
+  border: 2px solid #e7832b;
+  width: 100px;
+  height: 30px;
+  border-radius: 40px;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#restorePasswordForm {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#restorePasswordForm input {
+  height: 30px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  width: 100%;
+  text-indent: 15px;
+  margin-top: 40px;
+}
+
+#restorePasswordForm button {
+  background-color: transparent;
+  border: 2px solid #e7832b;
+  width: 100px;
+  height: 30px;
+  border-radius: 40px;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

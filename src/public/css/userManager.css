@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background-color: rgb(38, 38, 38);
+  overflow-x: hidden;
+}
+.navBarAdmin {
+  width: 200px;
+  height: 100vh;
+  background-color: rgb(38, 38, 38);
+  margin-bottom: 30px;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  z-index: 1000;
+}
+
+.navBarAdmin:before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(-45deg, #e6740a 0%, #ff930f 100%);
+  transform: translate3d(0px, 5px, 0) scale(1);
+  filter: blur(20px);
+  opacity: var(0.7);
+  transition: opacity 0.3s;
+  border-radius: inherit;
+}
+
+.navBarAdmin::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: inherit;
+  border-radius: inherit;
+}
+
+.navBarAdmin ul {
+  width: 100%;
+  height: 33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  list-style: none;
+  color: white;
+}
+.enlaces {
+  width: 100%;
+  height: 100%;
+  justify-content: space-around;
+}
+.navBarAdmin ul li {
+  cursor: pointer;
+}
+.navBarAdmin ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+}
+.logoAdmin {
+  width: 100%;
+  height: 33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.logoAdmin img {
+  width: 150px;
+  margin-top: -80px;
+  padding: 0;
+}
+.logoutContainer {
+  width: 100%;
+  height: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.logoutContainer button {
+  position: absolute;
+  bottom: 40px;
+  background-color: transparent;
+  border: 2px solid #e7832b;
+  width: 100px;
+  height: 30px;
+  border-radius: 40px;
+  color: white;
+  cursor: pointer;
+}
+.userManager {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  margin-left: 400px;
+  color: white;
+}
+
+.creadorUsuarios {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  margin-left: 150px;
+  justify-content: center;
+}
+.creadorDeUsuarios h2 {
+  color: white;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  width: 300px;
+}
+
+.cadaUsuario {
+  width: 1000px;
+  margin-top: 10px;
+  text-align: center;
+}
+.cadaUsuario button {
+  margin: 0;
+  padding: 0;
+}
+.cadaUsuario table {
+  width: 100%;
+  color: white;
+}
+.cadaUsuario table td {
+  margin-top: 20px;
+  text-align: center;
+}
+.cadaUsuario table tr {
+  height: 50px;
+}
+button {
+  background-color: transparent;
+  border: 2px solid #e7832b;
+  width: 100px;
+  height: 30px;
+  border-radius: 40px;
+  color: white;
+  margin-top: 20px;
+}
+.titulo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

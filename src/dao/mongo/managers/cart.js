@@ -15,50 +15,59 @@ export default class CartsManager {
     return cartsModel.create(cart);
   };
 
-  addProductToCart = async (cid, pid) => {
+  addProductToCart = async (pid, cid, quantity) => {
     try {
-      // Obtén el carrito correspondiente al ID (cid)
       let cart = await cartsModel.findById(cid);
       if (!cart) {
-        throw new Error("Carrito no encontrado");
+        throw new Error("Carrito no encontrado!!!");
       }
-      // Busca el índice del producto en el arreglo de productos
+
       const existingProductIndex = cart.products.findIndex(
-        (product) => product.product == pid
+        (product) => product.product._id.toString() === pid
       );
+
       if (existingProductIndex !== -1) {
-        // Si el producto ya existe en el carrito, incrementa la cantidad en 1
-        cart.products[existingProductIndex].quantity += 1;
+        if (quantity) {
+          cart.products[existingProductIndex].quantity = quantity;
+        } else {
+          cart.products[existingProductIndex].quantity += 1;
+        }
       } else {
-        // Si el producto no existe en el carrito, agrégalo al arreglo de productos
-        cart.products.push({ product: pid, quantity: 1 });
+        if (quantity) {
+          cart.products.push({ product: pid, quantity: quantity });
+        } else {
+          cart.products.push({ product: pid, quantity: 1 });
+        }
       }
-      // Guarda los cambios en la base de datos
+
       cart = await cart.save();
+
       return cart;
     } catch (error) {
       throw new Error(error.message);
     }
   };
-
   deleteProductToCart = async (cid, pid) => {
     try {
       let cart = await cartsModel.findById(cid);
+
       if (!cart) {
         throw new Error("Carrito no encontrado");
       }
-      console.log(cart.products);
+
       const existingProductIndex = cart.products.findIndex(
-        (product) => product.product == pid
+        (product) => product.product._id.toString() === pid
       );
+
       if (existingProductIndex !== -1) {
-        // Elimina el producto del arreglo de productos del carrito
         cart.products.splice(existingProductIndex, 1);
       } else {
-        // Si el producto no existe en el carrito, avisame
         throw new Error("producto no encontrado");
       }
+
       cart = await cart.save();
+
+      return cart;
     } catch (error) {
       throw new Error(error.message);
     }
@@ -80,28 +89,48 @@ export default class CartsManager {
   updateProductInCart = async (cid, pid, newQuantity) => {
     try {
       const cartToUpdate = await cartsModel.findById(cid);
+
       if (!cartToUpdate) {
         throw new Error("Carrito no encontrado");
       }
       const existingProductIndex = cartToUpdate.products.findIndex(
-        (product) => product.product == pid
+        (product) => product.product._id == pid
       );
       if (existingProductIndex === -1) {
         throw new Error("Producto no encontrado en el carrito");
       }
-      console.log(cartToUpdate.products[existingProductIndex]);
 
       const product = cartToUpdate.products[existingProductIndex].product;
 
       cartToUpdate.products[existingProductIndex] = {
         product: product,
-        quantity: newQuantity.quantity,
+        quantity: newQuantity,
       };
 
       const updatedCart = await cartToUpdate.save();
       return updatedCart;
     } catch (error) {
       console.log(error);
+    }
+  };
+  updateProductStock = async (cid) => {
+    try {
+      const cartToUpdate = await cartsModel.findById(cid);
+      for (const { product, quantity } of cartToUpdate.products) {
+        const productSelected = await productModel.findById(product);
+        if (!productSelected) {
+          throw new Error(`Product not found with ID: ${product}`);
+        }
+
+        if (product.stock < quantity) {
+          throw new Error(`Insufficient stock for product with ID: ${product}`);
+        }
+
+        product.stock -= quantity;
+        await product.save();
+      }
+    } catch (error) {
+      throw new Error(error.message);
     }
   };
 }

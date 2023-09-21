@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(38, 38, 38);
+  overflow-x: hidden;
+}
+.thanks {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../img/fondosushi.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.logoutContainer {
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.logoutContainer button {
+  background-color: transparent;
+  border: 2px solid #e7832b;
+  width: 100px;
+  height: 30px;
+  border-radius: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+.saludo {
+  font-size: 50px;
+  color: white;
+  width: 60%;
+  text-align: center;
+}
