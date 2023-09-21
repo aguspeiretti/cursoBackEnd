@@ -30,7 +30,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha test/Users/UsersDao.test.js",
-    "start": "node src/app.js",
+    "start": "node ./src/app.js",
     "dev": "nodemon ./src/app.js"
   },
   "keywords": [],
