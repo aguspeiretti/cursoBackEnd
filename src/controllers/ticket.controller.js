@@ -20,11 +20,15 @@ const getTicketsById = async (req, res) => {
 
 const createTickets = async (req, res) => {
   try {
-    const ticket = await ticketService.createTicketsService(req.body);
-    console.log(req.body);
+    const cart = await cartService.getCartByIdService(req.body.cart);
+    const data = { ...req.body, products: [...cart.products] };
+
+    console.log(data.products);
+
+    const ticket = await ticketService.createTicketsService(data);
+
     await cartService.updateProductStockService(req.body.cart);
     const clear = await cartService.deleteCartItems(req.body.cart);
-
     const emailService = new mailService();
     const emailResult = await emailService.sendMail(
       req.body.purchaser,
@@ -33,6 +37,7 @@ const createTickets = async (req, res) => {
         userName: req.body.purchaser,
         montoTotal: req.body.amount,
         ticketId: ticket._id,
+        products: data.products,
       }
     );
 

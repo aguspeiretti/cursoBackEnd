@@ -9,21 +9,9 @@
     <p>Gracias por tu compra en nuestra tienda. A continuación, encontrarás los
       detalles de tu compra:</p>
 
-    <h2>ID del Ticket: {{ticketId}}</h2>
+    <h2>Tu orden de compra es la n°: {{ticketId}}</h2>
 
-    <h3>Detalles de la compra:</h3>
-    <ul>
-      {{#each products}}
-        <li>
-          <strong>{{this.product.title}}</strong><br />
-          Cantidad:
-          {{this.quantity}}<br />
-          Subtotal: ${{this.subtotal}}
-        </li>
-      {{/each}}
-    </ul>
-
-    <p>Total: ${{montoTotal}}</p>
+    <p>El monto total fue de: ${{montoTotal}}</p>
 
     <p>Gracias por elegir nuestros productos. Esperamos que disfrutes de tu
       compra.</p>

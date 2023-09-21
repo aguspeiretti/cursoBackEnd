@@ -3,7 +3,6 @@ const userName = document.querySelector(".userName").dataset.userId;
 const montoTotal = document.querySelector(".montoTotal").dataset.total;
 const userCart = document.querySelector(".cart").dataset.cartId;
 
-// -Función para crear el ticket
 const createTicket = async () => {
   try {
     if (!userName || montoTotal === "0" || !userCart) {
